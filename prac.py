@@ -6,6 +6,9 @@ bot = telebot.TeleBot("881872217:AAHjDOnnKDXr5D5LnyphqkO7Roe4QboXhTA")
 
 chat = []
 
+bookslist = [{"text": "Kaplan Prep Book 4/5", "id": "BQACAgIAAxkBAAMhXklypBJyY-RvQGXBWa8SARLgIycAAnMFAAL9rFBKk7m2Y4uCJmsYBA"},
+             {"text": "Cracking the SAT 5/5", "id": "BQACAgIAAxkBAAM0Xkl2loQAAdwDhMAIDdyN5oE9ywehAALZBAACgTRISgnQSBWIN8vDGAQ"}]
+
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -24,9 +27,15 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: message.data == "books")
 def books(message):
-    bookslist = {"Kaplan": {"text": "Kaplan Prep Book 4/5", "id": "BQACAgIAAxkBAAMhXklypBJyY-RvQGXBWa8SARLgIycAAnMFAAL9rFBKk7m2Y4uCJmsYBA"},
-             "Cracking": {"text": "Cracking the SAT 5/5", "id": "BQACAgIAAxkBAAM0Xkl2loQAAdwDhMAIDdyN5oE9ywehAALZBAACgTRISgnQSBWIN8vDGAQ"}}
-    bot.send_document(chat[0], "BQACAgIAAxkBAAMhXklypBJyY-RvQGXBWa8SARLgIycAAnMFAAL9rFBKk7m2Y4uCJmsYBA")
+    for book in bookslist:
+        bot.send_document(message.from_user.id, book["id"])
+
+
+@bot.message_handler(content_types=['document'])
+def add_book(message):
+    file_id = message.document.file_id
+    title = message.document.file_name
+    bookslist.append({"text": title, "id": file_id})
 
 
 bot.polling()
