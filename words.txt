@@ -1,0 +1,4996 @@
+<TR>
+			<TD>1</TD>
+			<TD><B>abate</B></TD>
+			<TD>lessen</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>2</TD>
+			<TD><B>aberration</B></TD>
+			<TD>deviation, not normal</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>3</TD>
+			<TD><B>abhor, abhorrence</B></TD>
+			<TD>hatred</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>4</TD>
+			<TD><B>abstruse</B></TD>
+			<TD>difficult to understand</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>5</TD>
+			<TD><B>accost</B></TD>
+			<TD>confront</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>6</TD>
+			<TD><B>acrimony</B></TD>
+			<TD>bitter animosity</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>7</TD>
+			<TD><B>acumen</B></TD>
+			<TD>insightfulness</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>8</TD>
+			<TD><B>adamant</B></TD>
+			<TD>not yielding</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>9</TD>
+			<TD><B>adept</B></TD>
+			<TD>skillful</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>10</TD>
+			<TD><B>adroit</B></TD>
+			<TD>skillful</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>11</TD>
+			<TD><B>affected</B></TD>
+			<TD>haughty</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>12</TD>
+			<TD><B>alacrity</B></TD>
+			<TD>eagerness</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>13</TD>
+			<TD><B>allocate</B></TD>
+			<TD>assign, portion</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>14</TD>
+			<TD><B>altruistic, altruism</B></TD>
+			<TD>generous</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>15</TD>
+			<TD><B>amenable</B></TD>
+			<TD>yielding</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>16</TD>
+			<TD><B>amiable</B></TD>
+			<TD>friendly</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>17</TD>
+			<TD><B>amicable</B></TD>
+			<TD>friendly</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>18</TD>
+			<TD><B>antediluvian</B></TD>
+			<TD>very old</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>19</TD>
+			<TD><B>anthropology</B></TD>
+			<TD>study of human beings</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>20</TD>
+			<TD><B>antipathy</B></TD>
+			<TD>dislike</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>21</TD>
+			<TD><B>apathetic, apathy</B></TD>
+			<TD>lacking interest</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>22</TD>
+			<TD><B>apt</B></TD>
+			<TD>appropriate, inclined</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>23</TD>
+			<TD><B>arcane</B></TD>
+			<TD>mysterious, known only by a few</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>24</TD>
+			<TD><B>ascendancy</B></TD>
+			<TD>influence, domination</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>25</TD>
+			<TD><B>ascetic, asceticism</B></TD>
+			<TD>one who practices self-denial as a spiritual discipline</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>26</TD>
+			<TD><B>aspire</B></TD>
+			<TD>strive for</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>27</TD>
+			<TD><B>assail</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>28</TD>
+			<TD><B>assiduous</B></TD>
+			<TD>diligent</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>29</TD>
+			<TD><B>assuage</B></TD>
+			<TD>relieve, appease</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>30</TD>
+			<TD><B>atrophy</B></TD>
+			<TD>waste away</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>31</TD>
+			<TD><B>attenuate</B></TD>
+			<TD>weaken, reduce</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>32</TD>
+			<TD><B>august</B></TD>
+			<TD>dignified</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>33</TD>
+			<TD><B>aura</B></TD>
+			<TD>air, feeling</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>34</TD>
+			<TD><B>auspicious</B></TD>
+			<TD>favorable</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>35</TD>
+			<TD><B>autocrat, autocratic</B></TD>
+			<TD>dictator, dictatorial</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>36</TD>
+			<TD><B>automaton</B></TD>
+			<TD>a person who acts like a robot</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>37</TD>
+			<TD><B>avarice</B></TD>
+			<TD>greed</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>38</TD>
+			<TD><B>banal</B></TD>
+			<TD>common</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>39</TD>
+			<TD><B>barrage</B></TD>
+			<TD>bombardment, torrent</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>40</TD>
+			<TD><B>belie</B></TD>
+			<TD>give a false impression</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>41</TD>
+			<TD><B>belligerent</B></TD>
+			<TD>aggressive, warlike</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>42</TD>
+			<TD><B>benevolent</B></TD>
+			<TD>generous</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>43</TD>
+			<TD><B>bequeath</B></TD>
+			<TD>hand down (through a will)</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>44</TD>
+			<TD><B>berate</B></TD>
+			<TD>scold harshly</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>45</TD>
+			<TD><B>bipartisanship</B></TD>
+			<TD>supported by two opposing groups (political parties)</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>46</TD>
+			<TD><B>blighted</B></TD>
+			<TD>destroyed</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>47</TD>
+			<TD><B>bog</B></TD>
+			<TD>marsh, swamp</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>48</TD>
+			<TD><B>bolster</B></TD>
+			<TD>support</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>49</TD>
+			<TD><B>bombastic</B></TD>
+			<TD>pompous</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>50</TD>
+			<TD><B>boorish, boorishness</B></TD>
+			<TD>crude</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>51</TD>
+			<TD><B>buoyant</B></TD>
+			<TD>cheerful, floating</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>52</TD>
+			<TD><B>burgeon</B></TD>
+			<TD>grow, flourish</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>53</TD>
+			<TD><B>buttress</B></TD>
+			<TD>support</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>54</TD>
+			<TD><B>byzantine</B></TD>
+			<TD>convoluted, complex</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>55</TD>
+			<TD><B>cacophonous, cacophony</B></TD>
+			<TD>discordant sound</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>56</TD>
+			<TD><B>cajole</B></TD>
+			<TD>coax</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>57</TD>
+			<TD><B>callous</B></TD>
+			<TD>insensitive</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>58</TD>
+			<TD><B>cantankerous(ness)</B></TD>
+			<TD>irritable</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>59</TD>
+			<TD><B>capricious</B></TD>
+			<TD>fickle</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>60</TD>
+			<TD><B>castigate</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>61</TD>
+			<TD><B>caustic</B></TD>
+			<TD>bitter</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>62</TD>
+			<TD><B>censorious</B></TD>
+			<TD>harshly critical</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>63</TD>
+			<TD><B>censure</B></TD>
+			<TD>scold</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>64</TD>
+			<TD><B>cerebral</B></TD>
+			<TD>intellectual</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>65</TD>
+			<TD><B>chagrin</B></TD>
+			<TD>mortification</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>66</TD>
+			<TD><B>charlatan</B></TD>
+			<TD>swindler</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>67</TD>
+			<TD><B>chastise</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>68</TD>
+			<TD><B>chide</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>69</TD>
+			<TD><B>churlish</B></TD>
+			<TD>vulgar, boorish</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>70</TD>
+			<TD><B>circuitous</B></TD>
+			<TD>indirect</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>71</TD>
+			<TD><B>circumscribe</B></TD>
+			<TD>restrict</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>72</TD>
+			<TD><B>circumvent</B></TD>
+			<TD>escape, avoid</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>73</TD>
+			<TD><B>clandestine</B></TD>
+			<TD>secretive</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>74</TD>
+			<TD><B>coalesce</B></TD>
+			<TD>blend, fuse</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>75</TD>
+			<TD><B>compendious</B></TD>
+			<TD>succinct</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>76</TD>
+			<TD><B>complacency, complacent</B></TD>
+			<TD>self-satisfaction, smugness</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>77</TD>
+			<TD><B>compliant, compliance</B></TD>
+			<TD>yielding</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>78</TD>
+			<TD><B>conciliate, conciliatory</B></TD>
+			<TD>compromising, apologizing</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>79</TD>
+			<TD><B>concur</B></TD>
+			<TD>agree</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>80</TD>
+			<TD><B>conflagration</B></TD>
+			<TD>large destructive fire</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>81</TD>
+			<TD><B>confluence</B></TD>
+			<TD>a place where things merge or flow together</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>82</TD>
+			<TD><B>congenial</B></TD>
+			<TD>pleasant</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>83</TD>
+			<TD><B>conscientious</B></TD>
+			<TD>careful</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>84</TD>
+			<TD><B>consternation</B></TD>
+			<TD>dismay</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>85</TD>
+			<TD><B>contempt(uous)</B></TD>
+			<TD>disdainful</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>86</TD>
+			<TD><B>contemptible</B></TD>
+			<TD>despicable</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>87</TD>
+			<TD><B>contentious</B></TD>
+			<TD>belligerent, quarrelsome</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>88</TD>
+			<TD><B>convivial</B></TD>
+			<TD>sociable, lively</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>89</TD>
+			<TD><B>copious</B></TD>
+			<TD>abundant</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>90</TD>
+			<TD><B>corroborate</B></TD>
+			<TD>strengthen or support with additional evidence</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>91</TD>
+			<TD><B>cosmopolitan</B></TD>
+			<TD>sophisticated, urbane</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>92</TD>
+			<TD><B>credulity, credulous</B></TD>
+			<TD>the trait of trusting others too much</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>93</TD>
+			<TD><B>culpable</B></TD>
+			<TD>blameworthy</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>94</TD>
+			<TD><B>cursory</B></TD>
+			<TD>hasty, superficial</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>95</TD>
+			<TD><B>dauntless</B></TD>
+			<TD>courageous</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>96</TD>
+			<TD><B>dearth</B></TD>
+			<TD>scarcity</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>97</TD>
+			<TD><B>debacle</B></TD>
+			<TD>failure</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>98</TD>
+			<TD><B>debilitate(d)</B></TD>
+			<TD>weaken(ed)</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>99</TD>
+			<TD><B>debunk</B></TD>
+			<TD>prove wrong</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>100</TD>
+			<TD><B>decimate</B></TD>
+			<TD>destroy</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>101</TD>
+			<TD><B>decorum, decorous</B></TD>
+			<TD>order, politeness</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>102</TD>
+			<TD><B>deference, deferential</B></TD>
+			<TD>respectful submission, yielding</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>103</TD>
+			<TD><B>degradation</B></TD>
+			<TD>humiliation</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>104</TD>
+			<TD><B>deleterious</B></TD>
+			<TD>harmful</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>105</TD>
+			<TD><B>delineate</B></TD>
+			<TD>list, explain</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>106</TD>
+			<TD><B>demonstrative</B></TD>
+			<TD>openly emotional</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>107</TD>
+			<TD><B>demure, demurral</B></TD>
+			<TD>overly modest</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>108</TD>
+			<TD><B>demystify</B></TD>
+			<TD>make clear and comprehensible</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>109</TD>
+			<TD><B>denigrate</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>110</TD>
+			<TD><B>depose</B></TD>
+			<TD>dethrone, remove from power</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>111</TD>
+			<TD><B>depravity</B></TD>
+			<TD>moral corruption</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>112</TD>
+			<TD><B>deprecate</B></TD>
+			<TD>disapprove, belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>113</TD>
+			<TD><B>depreciation, depreciatory</B></TD>
+			<TD>decrease in value</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>114</TD>
+			<TD><B>deride</B></TD>
+			<TD>make fun of</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>115</TD>
+			<TD><B>derivative</B></TD>
+			<TD>not original</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>116</TD>
+			<TD><B>derogatory, derogate</B></TD>
+			<TD>disparaging, belittling</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>117</TD>
+			<TD><B>desecration</B></TD>
+			<TD>violate the sacredness of</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>118</TD>
+			<TD><B>despondent</B></TD>
+			<TD>sad, depressed</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>119</TD>
+			<TD><B>despot</B></TD>
+			<TD>dictator</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>120</TD>
+			<TD><B>destitute</B></TD>
+			<TD>poor</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>121</TD>
+			<TD><B>deterrent</B></TD>
+			<TD>hindrance, impediment</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>122</TD>
+			<TD><B>devoid</B></TD>
+			<TD>lacking</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>123</TD>
+			<TD><B>didactic</B></TD>
+			<TD>(often excessively) morally instructive</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>124</TD>
+			<TD><B>diffident, diffidence</B></TD>
+			<TD>shy</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>125</TD>
+			<TD><B>diffuse</B></TD>
+			<TD>spread out</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>126</TD>
+			<TD><B>digress(ion)</B></TD>
+			<TD>stray from the subject at hand</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>127</TD>
+			<TD><B>dilatory</B></TD>
+			<TD>tending to waste time</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>128</TD>
+			<TD><B>diminutive, diminution</B></TD>
+			<TD>extremely small</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>129</TD>
+			<TD><B>dire</B></TD>
+			<TD>urgent, dreadful</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>130</TD>
+			<TD><B>discern, discerning</B></TD>
+			<TD>perceive, perceptive</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>131</TD>
+			<TD><B>discomfited</B></TD>
+			<TD>disappointed, defeated</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>132</TD>
+			<TD><B>discount (verb)</B></TD>
+			<TD>disregard</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>133</TD>
+			<TD><B>disheartening</B></TD>
+			<TD>discouraging</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>134</TD>
+			<TD><B>disillusionment</B></TD>
+			<TD>disenchantment, disappointment</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>135</TD>
+			<TD><B>disingenuous</B></TD>
+			<TD>insincere</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>136</TD>
+			<TD><B>disparage</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>137</TD>
+			<TD><B>dispassionate</B></TD>
+			<TD>unemotional</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>138</TD>
+			<TD><B>dispel</B></TD>
+			<TD>to drive away or disprove</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>139</TD>
+			<TD><B>disputatious</B></TD>
+			<TD>quarrelsome</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>140</TD>
+			<TD><B>disquiet(ing)</B></TD>
+			<TD>(causing) anxiety</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>141</TD>
+			<TD><B>disseminate</B></TD>
+			<TD>scatter widely</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>142</TD>
+			<TD><B>distaste</B></TD>
+			<TD>dislike, aversion</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>143</TD>
+			<TD><B>divergent</B></TD>
+			<TD>different, conflicting</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>144</TD>
+			<TD><B>divisive</B></TD>
+			<TD>creating conflict</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>145</TD>
+			<TD><B>divulge</B></TD>
+			<TD>make known</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>146</TD>
+			<TD><B>doctrine</B></TD>
+			<TD>religious, political, or philosophical principles or teachings</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>147</TD>
+			<TD><B>dogmatic</B></TD>
+			<TD>tending to force one's own opinions on other people</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>148</TD>
+			<TD><B>dormant</B></TD>
+			<TD>inactive</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>149</TD>
+			<TD><B>dupe</B></TD>
+			<TD>deceive</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>150</TD>
+			<TD><B>duplicitous, duplicity</B></TD>
+			<TD>deliberately deceptive</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>151</TD>
+			<TD><B>ebullient</B></TD>
+			<TD>enthusiastic</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>152</TD>
+			<TD><B>eclectic</B></TD>
+			<TD>from diverse sources</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>153</TD>
+			<TD><B>efface(ment)</B></TD>
+			<TD>erase</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>154</TD>
+			<TD><B>effervesce</B></TD>
+			<TD>bubble, fizz</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>155</TD>
+			<TD><B>egalitarian</B></TD>
+			<TD>belief in equality</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>156</TD>
+			<TD><B>elated, elation</B></TD>
+			<TD>joyful</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>157</TD>
+			<TD><B>elicit</B></TD>
+			<TD>bring about</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>158</TD>
+			<TD><B>elucidate</B></TD>
+			<TD>clarify</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>159</TD>
+			<TD><B>elude</B></TD>
+			<TD>evade</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>160</TD>
+			<TD><B>elusive</B></TD>
+			<TD>difficulty to catch or define</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>161</TD>
+			<TD><B>embitter(ed)</B></TD>
+			<TD>make worse</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>162</TD>
+			<TD><B>embroil(ed)</B></TD>
+			<TD>involve in an argument or conflict</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>163</TD>
+			<TD><B>empathetic, empathy</B></TD>
+			<TD>compassionate</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>164</TD>
+			<TD><B>empiric(al)</B></TD>
+			<TD>based on observation and experiment (not theory)</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>165</TD>
+			<TD><B>encompass</B></TD>
+			<TD>include, surround</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>166</TD>
+			<TD><B>encroaching</B></TD>
+			<TD>intrusive</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>167</TD>
+			<TD><B>encumbrance</B></TD>
+			<TD>burden</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>168</TD>
+			<TD><B>enigma(tic)</B></TD>
+			<TD>mystery, mysterious</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>169</TD>
+			<TD><B>enumerate</B></TD>
+			<TD>list</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>170</TD>
+			<TD><B>ephemeral</B></TD>
+			<TD>short-lived</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>171</TD>
+			<TD><B>epiphany</B></TD>
+			<TD>sudden realization</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>172</TD>
+			<TD><B>epitome, epitomize</B></TD>
+			<TD>representative example</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>173</TD>
+			<TD><B>equanimity</B></TD>
+			<TD>calmness</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>174</TD>
+			<TD><B>equitable</B></TD>
+			<TD>even-handed</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>175</TD>
+			<TD><B>equivocal</B></TD>
+			<TD>ambiguous</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>176</TD>
+			<TD><B>erudite, erudition</B></TD>
+			<TD>scholarly</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>177</TD>
+			<TD><B>esoteric</B></TD>
+			<TD>understood only by a few</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>178</TD>
+			<TD><B>estrange, estrangement</B></TD>
+			<TD>alienate, alienation</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>179</TD>
+			<TD><B>eulogy, eulogize</B></TD>
+			<TD>praising speech</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>180</TD>
+			<TD><B>evoke</B></TD>
+			<TD>bring about, stir up</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>181</TD>
+			<TD><B>exacting</B></TD>
+			<TD>demanding, severe requirements</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>182</TD>
+			<TD><B>excavate</B></TD>
+			<TD>unearth, dig up</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>183</TD>
+			<TD><B>exemplar</B></TD>
+			<TD>representative example</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>184</TD>
+			<TD><B>exhibitionist, exhibitionistic</B></TD>
+			<TD>deliberately behaving a certain way to attract attention</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>185</TD>
+			<TD><B>exhort</B></TD>
+			<TD>encourage</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>186</TD>
+			<TD><B>exorbitant</B></TD>
+			<TD>too expensive</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>187</TD>
+			<TD><B>expedient</B></TD>
+			<TD>useful</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>188</TD>
+			<TD><B>exposé</B></TD>
+			<TD>a report designed to reveal the truth to the public</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>189</TD>
+			<TD><B>extol</B></TD>
+			<TD>praise</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>190</TD>
+			<TD><B>extricate</B></TD>
+			<TD>disentangle</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>191</TD>
+			<TD><B>facile</B></TD>
+			<TD>superficial, effortless</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>192</TD>
+			<TD><B>faction</B></TD>
+			<TD>group within a larger group</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>193</TD>
+			<TD><B>fallacious</B></TD>
+			<TD>deceitful, incorrect</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>194</TD>
+			<TD><B>fallacy</B></TD>
+			<TD>false belief</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>195</TD>
+			<TD><B>fanaticism</B></TD>
+			<TD>excessive enthusiasm</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>196</TD>
+			<TD><B>fastidious</B></TD>
+			<TD>careful</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>197</TD>
+			<TD><B>fathom (verb)</B></TD>
+			<TD>understand</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>198</TD>
+			<TD><B>felicitous</B></TD>
+			<TD>well-suited, happy</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>199</TD>
+			<TD><B>finesse</B></TD>
+			<TD>tact, elegant skill</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>200</TD>
+			<TD><B>flagrant</B></TD>
+			<TD>evident, obvious</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>201</TD>
+			<TD><B>flippant, flippancy</B></TD>
+			<TD>disrespectful</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>202</TD>
+			<TD><B>florid(ity)</B></TD>
+			<TD>flushed, flowery</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>203</TD>
+			<TD><B>flummox</B></TD>
+			<TD>confuse</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>204</TD>
+			<TD><B>folly</B></TD>
+			<TD>foolishness</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>205</TD>
+			<TD><B>foolhardy</B></TD>
+			<TD>recklessly daring</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>206</TD>
+			<TD><B>forlorn</B></TD>
+			<TD>sad</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>207</TD>
+			<TD><B>fortitude</B></TD>
+			<TD>courage</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>208</TD>
+			<TD><B>fortuitous</B></TD>
+			<TD>fortunate, lucky</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>209</TD>
+			<TD><B>fraudulent</B></TD>
+			<TD>deceitful</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>210</TD>
+			<TD><B>frugal(ity)</B></TD>
+			<TD>cheap(ness)</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>211</TD>
+			<TD><B>furor</B></TD>
+			<TD>commotion, anger</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>212</TD>
+			<TD><B>furtive</B></TD>
+			<TD>sneaky</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>213</TD>
+			<TD><B>futile, futility</B></TD>
+			<TD>hopeless</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>214</TD>
+			<TD><B>gait</B></TD>
+			<TD>manner of walking</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>215</TD>
+			<TD><B>gallant(ry)</B></TD>
+			<TD>courageous</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>216</TD>
+			<TD><B>gargantuan</B></TD>
+			<TD>gigantic</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>217</TD>
+			<TD><B>garish</B></TD>
+			<TD>tastelessly showy</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>218</TD>
+			<TD><B>genial</B></TD>
+			<TD>friendly</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>219</TD>
+			<TD><B>germinate</B></TD>
+			<TD>(cause to) grow</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>220</TD>
+			<TD><B>glutton(ous)</B></TD>
+			<TD>someone who eats and drinks too much</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>221</TD>
+			<TD><B>grandiose</B></TD>
+			<TD>pompous, pretentious</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>222</TD>
+			<TD><B>hackneyed</B></TD>
+			<TD>common</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>223</TD>
+			<TD><B>hamper (verb)</B></TD>
+			<TD>hinder, restrict</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>224</TD>
+			<TD><B>hardy</B></TD>
+			<TD>robust, sturdy</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>225</TD>
+			<TD><B>hasten</B></TD>
+			<TD>speed up the progress of</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>226</TD>
+			<TD><B>heresy, heretic</B></TD>
+			<TD>belief contrary to the established opinion</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>227</TD>
+			<TD><B>histrionic</B></TD>
+			<TD>excessively dramatic or emotional</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>228</TD>
+			<TD><B>hubris</B></TD>
+			<TD>arrogance</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>229</TD>
+			<TD><B>idiosyncracy, idiosyncratic</B></TD>
+			<TD>unique personal trait, quirky</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>230</TD>
+			<TD><B>idyllic</B></TD>
+			<TD>simply tranquil</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>231</TD>
+			<TD><B>ignominy, ignominious</B></TD>
+			<TD>dishonor, humiliation</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>232</TD>
+			<TD><B>illicit</B></TD>
+			<TD>illegal</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>233</TD>
+			<TD><B>impasse</B></TD>
+			<TD>obstacle</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>234</TD>
+			<TD><B>imperious</B></TD>
+			<TD>arrogant</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>235</TD>
+			<TD><B>impetuous</B></TD>
+			<TD>rash, passionate</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>236</TD>
+			<TD><B>impudence, impudent</B></TD>
+			<TD>disrespectful, insolent</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>237</TD>
+			<TD><B>inane</B></TD>
+			<TD>senseless, stupid</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>238</TD>
+			<TD><B>incongruity, incongruous</B></TD>
+			<TD>inappropriateness, discrepancy</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>239</TD>
+			<TD><B>incredulous, incredulity</B></TD>
+			<TD>skeptical</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>240</TD>
+			<TD><B>incriminate</B></TD>
+			<TD>accuse someone of a crime</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>241</TD>
+			<TD><B>incubate</B></TD>
+			<TD>develop, grow</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>242</TD>
+			<TD><B>indeterminate</B></TD>
+			<TD>left doubtful, inconclusive</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>243</TD>
+			<TD><B>indict(ment)</B></TD>
+			<TD>formally accuse of a crime</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>244</TD>
+			<TD><B>indigenous</B></TD>
+			<TD>native to a region</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>245</TD>
+			<TD><B>indignant</B></TD>
+			<TD>angered (by injustice)</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>246</TD>
+			<TD><B>indiscriminate</B></TD>
+			<TD>unselective, random</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>247</TD>
+			<TD><B>indolent</B></TD>
+			<TD>lazy</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>248</TD>
+			<TD><B>indomitable</B></TD>
+			<TD>too strong to be defeated</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>249</TD>
+			<TD><B>induce</B></TD>
+			<TD>cause</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>250</TD>
+			<TD><B>indulgent</B></TD>
+			<TD>lenient</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>251</TD>
+			<TD><B>ineffable</B></TD>
+			<TD>impossible to express in words</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>252</TD>
+			<TD><B>ineptitude</B></TD>
+			<TD>incompetence</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>253</TD>
+			<TD><B>inert, inertia</B></TD>
+			<TD>not moving or active</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>254</TD>
+			<TD><B>ingenuous</B></TD>
+			<TD>unsophisticated and trusting, naïve</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>255</TD>
+			<TD><B>inherent</B></TD>
+			<TD>intrinsic, natural</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>256</TD>
+			<TD><B>inhibit(ing)</B></TD>
+			<TD>restrain(ing)</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>257</TD>
+			<TD><B>innate</B></TD>
+			<TD>intrinsic, natural</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>258</TD>
+			<TD><B>innocuous</B></TD>
+			<TD>harmless</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>259</TD>
+			<TD><B>innuendo</B></TD>
+			<TD>implicit suggestion</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>260</TD>
+			<TD><B>inscrutable</B></TD>
+			<TD>mysterious</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>261</TD>
+			<TD><B>insipid</B></TD>
+			<TD>dull, boring</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>262</TD>
+			<TD><B>insolence, insolent</B></TD>
+			<TD>disrespectful</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>263</TD>
+			<TD><B>instigate</B></TD>
+			<TD>provoke, start</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>264</TD>
+			<TD><B>insular(ity)</B></TD>
+			<TD>related to or similar to an island</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>265</TD>
+			<TD><B>intrepid</B></TD>
+			<TD>courageous</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>266</TD>
+			<TD><B>inundate</B></TD>
+			<TD>flood</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>267</TD>
+			<TD><B>invoke</B></TD>
+			<TD>call forth, appeal to</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>268</TD>
+			<TD><B>irate</B></TD>
+			<TD>angry</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>269</TD>
+			<TD><B>irony, ironic</B></TD>
+			<TD>incongruity between what is expected and what actually results</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>270</TD>
+			<TD><B>irreverent, irreverence</B></TD>
+			<TD>disrespectful</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>271</TD>
+			<TD><B>jaded</B></TD>
+			<TD>tired, bored</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>272</TD>
+			<TD><B>jocular</B></TD>
+			<TD>cheerful</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>273</TD>
+			<TD><B>jovial</B></TD>
+			<TD>cheerful</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>274</TD>
+			<TD><B>judicious</B></TD>
+			<TD>fair</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>275</TD>
+			<TD><B>lackadaisical</B></TD>
+			<TD>lacking energy, lethargic</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>276</TD>
+			<TD><B>laconic</B></TD>
+			<TD>concise</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>277</TD>
+			<TD><B>laggard</B></TD>
+			<TD>lazy person</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>278</TD>
+			<TD><B>languid</B></TD>
+			<TD>inactive, dreamy</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>279</TD>
+			<TD><B>latent, latency</B></TD>
+			<TD>the state of being not yet evident or active</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>280</TD>
+			<TD><B>laud, laudatory</B></TD>
+			<TD>praise</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>281</TD>
+			<TD><B>listless</B></TD>
+			<TD>languid, sluggish</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>282</TD>
+			<TD><B>lithe</B></TD>
+			<TD>graceful, supple</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>283</TD>
+			<TD><B>lucid</B></TD>
+			<TD>clear, easily understood</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>284</TD>
+			<TD><B>lucrative</B></TD>
+			<TD>profitable</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>285</TD>
+			<TD><B>lull</B></TD>
+			<TD>short period of calm</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>286</TD>
+			<TD><B>lurid</B></TD>
+			<TD>sensational, shocking</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>287</TD>
+			<TD><B>luxuriant</B></TD>
+			<TD>lush, elaborate</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>288</TD>
+			<TD><B>magnanimity, magnanimous</B></TD>
+			<TD>generosity, generous</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>289</TD>
+			<TD><B>malleable</B></TD>
+			<TD>capable of being shaped, pliable</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>290</TD>
+			<TD><B>marred</B></TD>
+			<TD>scarred</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>291</TD>
+			<TD><B>maudlin</B></TD>
+			<TD>overly sentimental</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>292</TD>
+			<TD><B>melancholy</B></TD>
+			<TD>bleak</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>293</TD>
+			<TD><B>mercenary</B></TD>
+			<TD>motivated by money</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>294</TD>
+			<TD><B>mercurial</B></TD>
+			<TD>fickle</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>295</TD>
+			<TD><B>miserly</B></TD>
+			<TD>cheap, stingy</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>296</TD>
+			<TD><B>mitigate, mitigator</B></TD>
+			<TD>moderate, alleviate</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>297</TD>
+			<TD><B>modicum</B></TD>
+			<TD>small amount</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>298</TD>
+			<TD><B>morose</B></TD>
+			<TD>depressed</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>299</TD>
+			<TD><B>motley</B></TD>
+			<TD>diverse, heterogeneous</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>300</TD>
+			<TD><B>multifarious</B></TD>
+			<TD>many types</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>301</TD>
+			<TD><B>nebulous</B></TD>
+			<TD>vague</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>302</TD>
+			<TD><B>nefarious</B></TD>
+			<TD>evil</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>303</TD>
+			<TD><B>neophyte</B></TD>
+			<TD>beginner</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>304</TD>
+			<TD><B>notoriety, notorious</B></TD>
+			<TD>infamous, ill fame</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>305</TD>
+			<TD><B>noxious</B></TD>
+			<TD>poisonous</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>306</TD>
+			<TD><B>nuance</B></TD>
+			<TD>subtle difference</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>307</TD>
+			<TD><B>obdurate</B></TD>
+			<TD>stubborn</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>308</TD>
+			<TD><B>obstinate (obstinacy)</B></TD>
+			<TD>stubborn(ness)</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>309</TD>
+			<TD><B>officious</B></TD>
+			<TD>meddlesome, interfering</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>310</TD>
+			<TD><B>onerous</B></TD>
+			<TD>difficult, trying</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>311</TD>
+			<TD><B>opportunist, opportunistic</B></TD>
+			<TD>a person who takes advantage of opportunities, often unethically</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>312</TD>
+			<TD><B>oracle</B></TD>
+			<TD>prophet</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>313</TD>
+			<TD><B>orthodox</B></TD>
+			<TD>conservative, traditional</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>314</TD>
+			<TD><B>ostensible</B></TD>
+			<TD>apparent, seeming</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>315</TD>
+			<TD><B>oversight</B></TD>
+			<TD>mistake</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>316</TD>
+			<TD><B>pacifist</B></TD>
+			<TD>one who completely opposes violence</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>317</TD>
+			<TD><B>pacify</B></TD>
+			<TD>soothe, calm</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>318</TD>
+			<TD><B>painstaking</B></TD>
+			<TD>careful</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>319</TD>
+			<TD><B>palliate, palliative</B></TD>
+			<TD>relieve pain without curing</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>320</TD>
+			<TD><B>paradigm</B></TD>
+			<TD>clear example</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>321</TD>
+			<TD><B>parch</B></TD>
+			<TD>make dry</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>322</TD>
+			<TD><B>parody</B></TD>
+			<TD>intentional mockery</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>323</TD>
+			<TD><B>partisan</B></TD>
+			<TD>someone with biased beliefs</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>324</TD>
+			<TD><B>patronize</B></TD>
+			<TD>financially support, be condescending towards</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>325</TD>
+			<TD><B>paucity</B></TD>
+			<TD>scarcity</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>326</TD>
+			<TD><B>pedant, pedantic, pedantry</B></TD>
+			<TD>a person who makes a great show of his knowledge</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>327</TD>
+			<TD><B>peevish</B></TD>
+			<TD>unpleasant</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>328</TD>
+			<TD><B>penchant</B></TD>
+			<TD>preference</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>329</TD>
+			<TD><B>penurious</B></TD>
+			<TD>cheap, stingy</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>330</TD>
+			<TD><B>peremptory</B></TD>
+			<TD>bossy, decisive</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>331</TD>
+			<TD><B>perfunctory</B></TD>
+			<TD>done routinely with little interest or care</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>332</TD>
+			<TD><B>peripheral</B></TD>
+			<TD>outermost, secondary</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>333</TD>
+			<TD><B>perquisite</B></TD>
+			<TD>additional payment, bonus</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>334</TD>
+			<TD><B>petulant</B></TD>
+			<TD>irritable</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>335</TD>
+			<TD><B>philanthropist, philanthropic</B></TD>
+			<TD>someone who supports charity</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>336</TD>
+			<TD><B>piety, pious</B></TD>
+			<TD>religious devotion</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>337</TD>
+			<TD><B>placate</B></TD>
+			<TD>calm someone down</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>338</TD>
+			<TD><B>placid</B></TD>
+			<TD>calm</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>339</TD>
+			<TD><B>plasticity</B></TD>
+			<TD>malleability, the ability to be shaped or molded</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>340</TD>
+			<TD><B>plausible, plausibility</B></TD>
+			<TD>likely true</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>341</TD>
+			<TD><B>plethora, plethoric</B></TD>
+			<TD>surplus</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>342</TD>
+			<TD><B>pliable, pliant</B></TD>
+			<TD>easily shaped or influenced</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>343</TD>
+			<TD><B>polemical</B></TD>
+			<TD>controversial</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>344</TD>
+			<TD><B>prattle</B></TD>
+			<TD>babble</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>345</TD>
+			<TD><B>precarious</B></TD>
+			<TD>dangerous, unstable</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>346</TD>
+			<TD><B>precipitate</B></TD>
+			<TD>outcome</TD>
+			<TD>science</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>347</TD>
+			<TD><B>preclude</B></TD>
+			<TD>prevent</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>348</TD>
+			<TD><B>precocious</B></TD>
+			<TD>early development in maturity and intelligence</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>349</TD>
+			<TD><B>presumptuous</B></TD>
+			<TD>too bold, arrogant</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>350</TD>
+			<TD><B>pretext</B></TD>
+			<TD>misleading claim or appearance</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>351</TD>
+			<TD><B>prevaricator</B></TD>
+			<TD>liar</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>352</TD>
+			<TD><B>procure</B></TD>
+			<TD>get or provide</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>353</TD>
+			<TD><B>prodigious</B></TD>
+			<TD>huge</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>354</TD>
+			<TD><B>profound, profundity</B></TD>
+			<TD>intense, significant</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>355</TD>
+			<TD><B>profuse, profusion</B></TD>
+			<TD>plentiful</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>356</TD>
+			<TD><B>prohibitive, prohibition</B></TD>
+			<TD>restrictive</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>357</TD>
+			<TD><B>proliferate, proliferation</B></TD>
+			<TD>grow, increase</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>358</TD>
+			<TD><B>prolific</B></TD>
+			<TD>fertile, fruitful</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>359</TD>
+			<TD><B>pronouncement</B></TD>
+			<TD>formal declaration</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>360</TD>
+			<TD><B>propensity</B></TD>
+			<TD>inclination, tendency</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>361</TD>
+			<TD><B>proponent</B></TD>
+			<TD>supporter</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>362</TD>
+			<TD><B>prosaic</B></TD>
+			<TD>lacking imagination, dull</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>363</TD>
+			<TD><B>prospective</B></TD>
+			<TD>likely or expected to become</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>364</TD>
+			<TD><B>provident</B></TD>
+			<TD>prudent, frugal</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>365</TD>
+			<TD><B>provincial</B></TD>
+			<TD>narrow-minded, unsophisticated</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>366</TD>
+			<TD><B>punctilious</B></TD>
+			<TD>meticulous, attentive to detail</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>367</TD>
+			<TD><B>pundit</B></TD>
+			<TD>a knowledgeable commentator</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>368</TD>
+			<TD><B>quell</B></TD>
+			<TD>suppress, quench</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>369</TD>
+			<TD><B>quixotic</B></TD>
+			<TD>foolish</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>370</TD>
+			<TD><B>rampant</B></TD>
+			<TD>unrestrained, growing</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>371</TD>
+			<TD><B>ramshackle</B></TD>
+			<TD>poorly constructed</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>372</TD>
+			<TD><B>rancor(ous)</B></TD>
+			<TD>bitter resentment</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>373</TD>
+			<TD><B>rapport</B></TD>
+			<TD>relationship</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>374</TD>
+			<TD><B>ratify</B></TD>
+			<TD>approve, confirm</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>375</TD>
+			<TD><B>raucous</B></TD>
+			<TD>harsh, rowdy</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>376</TD>
+			<TD><B>ravenous</B></TD>
+			<TD>insatiable, having a huge appetite</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>377</TD>
+			<TD><B>raze</B></TD>
+			<TD>destroy, demolish</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>378</TD>
+			<TD><B>reap</B></TD>
+			<TD>harvest, gather</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>379</TD>
+			<TD><B>rebuttal</B></TD>
+			<TD>defense, counterargument</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>380</TD>
+			<TD><B>recalcitrant</B></TD>
+			<TD>stubborn</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>381</TD>
+			<TD><B>recant</B></TD>
+			<TD>reject</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>382</TD>
+			<TD><B>recessive</B></TD>
+			<TD>tending to go backward</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>383</TD>
+			<TD><B>recluse, reclusive</B></TD>
+			<TD>hermit</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>384</TD>
+			<TD><B>rectify, rectitude</B></TD>
+			<TD>put right, correct</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>385</TD>
+			<TD><B>redolent</B></TD>
+			<TD>reminiscent, having smell</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>386</TD>
+			<TD><B>refutation, refute</B></TD>
+			<TD>arguing that a claim is false</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>387</TD>
+			<TD><B>regressive</B></TD>
+			<TD>tending to return or revert</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>388</TD>
+			<TD><B>relegate</B></TD>
+			<TD>demote</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>389</TD>
+			<TD><B>relinquish</B></TD>
+			<TD>give back</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>390</TD>
+			<TD><B>renounce</B></TD>
+			<TD>reject</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>391</TD>
+			<TD><B>repertory</B></TD>
+			<TD>collection</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>392</TD>
+			<TD><B>reprehensible</B></TD>
+			<TD>blameworthy</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>393</TD>
+			<TD><B>reprimand</B></TD>
+			<TD>belittle</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>394</TD>
+			<TD><B>reproach</B></TD>
+			<TD>scold</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>395</TD>
+			<TD><B>repudiate</B></TD>
+			<TD>reject</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>396</TD>
+			<TD><B>repugnant</B></TD>
+			<TD>offensive, disgusting</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>397</TD>
+			<TD><B>rescind</B></TD>
+			<TD>annull, retract</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>398</TD>
+			<TD><B>reticent, reticence</B></TD>
+			<TD>emotionally reserved</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>399</TD>
+			<TD><B>reverent</B></TD>
+			<TD>respectful, pious</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>400</TD>
+			<TD><B>rhetoric(al), rhetorician</B></TD>
+			<TD>(related to) elegant speech/writing, elegant speaker/writer</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>401</TD>
+			<TD><B>rouse, rousing</B></TD>
+			<TD>provoke, excite</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>402</TD>
+			<TD><B>sage</B></TD>
+			<TD>wise</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>403</TD>
+			<TD><B>sanctimonious</B></TD>
+			<TD>pretending to be religious, hypocritical</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>404</TD>
+			<TD><B>sanction (verb)</B></TD>
+			<TD>formally approve</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>405</TD>
+			<TD><B>sanctity</B></TD>
+			<TD>holiness</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>406</TD>
+			<TD><B>sanguine</B></TD>
+			<TD>cheerfully confident, optimistic</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>407</TD>
+			<TD><B>satiate</B></TD>
+			<TD>satisfy fully</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>408</TD>
+			<TD><B>satire, satirical, satirize</B></TD>
+			<TD>sarcastic imitation</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>409</TD>
+			<TD><B>saturate</B></TD>
+			<TD>flood, soak</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>410</TD>
+			<TD><B>scanty</B></TD>
+			<TD>barely sufficient</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>411</TD>
+			<TD><B>scathing</B></TD>
+			<TD>harshly critical</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>412</TD>
+			<TD><B>scintillating</B></TD>
+			<TD>lively, effervescent</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>413</TD>
+			<TD><B>scope</B></TD>
+			<TD>opportunity, range</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>414</TD>
+			<TD><B>scrupulous</B></TD>
+			<TD>very careful and precise</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>415</TD>
+			<TD><B>scrutinize, scrutiny</B></TD>
+			<TD>examine carefully</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>416</TD>
+			<TD><B>self-righteous</B></TD>
+			<TD>smug, holier-than-thou</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>417</TD>
+			<TD><B>self-serving</B></TD>
+			<TD>selfish</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>418</TD>
+			<TD><B>serendipity</B></TD>
+			<TD>luck</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>419</TD>
+			<TD><B>servile</B></TD>
+			<TD>submissive, subservient</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>420</TD>
+			<TD><B>shrewd</B></TD>
+			<TD>astute, smart</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>421</TD>
+			<TD><B>shroud</B></TD>
+			<TD>hide, obscure</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>422</TD>
+			<TD><B>simile</B></TD>
+			<TD>comparison</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>423</TD>
+			<TD><B>slight (verb)</B></TD>
+			<TD>insult, snub</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>424</TD>
+			<TD><B>slipshod</B></TD>
+			<TD>careless, sloppy</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>425</TD>
+			<TD><B>solace</B></TD>
+			<TD>comfort, consolation</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>426</TD>
+			<TD><B>solicitous(ness)</B></TD>
+			<TD>expressing care or concern, often too much</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>427</TD>
+			<TD><B>somber</B></TD>
+			<TD>bleak</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>428</TD>
+			<TD><B>sophistry</B></TD>
+			<TD>deceptive reasoning</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>429</TD>
+			<TD><B>spartan</B></TD>
+			<TD>simple, self-disciplined</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>430</TD>
+			<TD><B>sporadic</B></TD>
+			<TD>occurring at irregular intervals</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>431</TD>
+			<TD><B>spurious</B></TD>
+			<TD>false, inauthentic</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>432</TD>
+			<TD><B>spurn</B></TD>
+			<TD>reject with contempt</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>433</TD>
+			<TD><B>squander</B></TD>
+			<TD>waste</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>434</TD>
+			<TD><B>stagnant, stagnation</B></TD>
+			<TD>not moving</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>435</TD>
+			<TD><B>stark(ness)</B></TD>
+			<TD>harsh, plain</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>436</TD>
+			<TD><B>static (adjective)</B></TD>
+			<TD>not moving</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>437</TD>
+			<TD><B>staunch</B></TD>
+			<TD>strong and loyal</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>438</TD>
+			<TD><B>steadfast</B></TD>
+			<TD>not yielding</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>439</TD>
+			<TD><B>stock (adjective)</B></TD>
+			<TD>standard, hackneyed</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>440</TD>
+			<TD><B>strident</B></TD>
+			<TD>loud and harsh</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>441</TD>
+			<TD><B>stupefy, stupefaction</B></TD>
+			<TD>bewilder</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>442</TD>
+			<TD><B>subservient</B></TD>
+			<TD>yielding</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>443</TD>
+			<TD><B>substantiate</B></TD>
+			<TD>confirm, establish as genuine</TD>
+			<TD>truth</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>444</TD>
+			<TD><B>subversive</B></TD>
+			<TD>one who intends to overthrow the government</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>445</TD>
+			<TD><B>succulent</B></TD>
+			<TD>delicious</TD>
+			<TD>the senses</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>446</TD>
+			<TD><B>supercilious</B></TD>
+			<TD>arrogant</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>447</TD>
+			<TD><B>superfluous</B></TD>
+			<TD>more than necessary</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>448</TD>
+			<TD><B>supplant</B></TD>
+			<TD>to take the place of</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>449</TD>
+			<TD><B>surfeit</B></TD>
+			<TD>surplus</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>450</TD>
+			<TD><B>susceptible</B></TD>
+			<TD>easily influenced or affected</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>451</TD>
+			<TD><B>sycophant</B></TD>
+			<TD>suck up, flatterer</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>452</TD>
+			<TD><B>tangential</B></TD>
+			<TD>digressive, irrelevant</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>453</TD>
+			<TD><B>teem, teeming</B></TD>
+			<TD>abundant</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>454</TD>
+			<TD><B>temperamental</B></TD>
+			<TD>moody</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>455</TD>
+			<TD><B>temporize</B></TD>
+			<TD>delay, evade</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>456</TD>
+			<TD><B>tenacious, tenacity</B></TD>
+			<TD>stubborn, determined</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>457</TD>
+			<TD><B>tenuous</B></TD>
+			<TD>insignificant, flimsy</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>458</TD>
+			<TD><B>tirade</B></TD>
+			<TD>critical speech</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>459</TD>
+			<TD><B>toady</B></TD>
+			<TD>suck-up</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>460</TD>
+			<TD><B>torpor</B></TD>
+			<TD>drowsiness, apathy</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>461</TD>
+			<TD><B>totalitarian</B></TD>
+			<TD>undemocratic, rigid political control</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>462</TD>
+			<TD><B>tout</B></TD>
+			<TD>praise</TD>
+			<TD>praise and criticism</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>463</TD>
+			<TD><B>tractable</B></TD>
+			<TD>easily managed or controlled</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>464</TD>
+			<TD><B>transient</B></TD>
+			<TD>lasting for only a short time</TD>
+			<TD>time</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>465</TD>
+			<TD><B>treatise</B></TD>
+			<TD>extensive written argument about some topic</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>466</TD>
+			<TD><B>trepidation</B></TD>
+			<TD>apprehension</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>467</TD>
+			<TD><B>tribulation</B></TD>
+			<TD>suffering</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>468</TD>
+			<TD><B>trifling</B></TD>
+			<TD>frivolous, unimportant</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>469</TD>
+			<TD><B>trite</B></TD>
+			<TD>common</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>470</TD>
+			<TD><B>truculent, truculence</B></TD>
+			<TD>aggressive, bad-tempered</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>471</TD>
+			<TD><B>ubiquitous</B></TD>
+			<TD>ever-present, pervasive</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>472</TD>
+			<TD><B>unabashed</B></TD>
+			<TD>not embarrassed</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>473</TD>
+			<TD><B>uncanny</B></TD>
+			<TD>extraordinary, weird</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>474</TD>
+			<TD><B>uncouth</B></TD>
+			<TD>crude</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>475</TD>
+			<TD><B>unfathomable</B></TD>
+			<TD>incomprehensible, unbelievable</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>476</TD>
+			<TD><B>ungainly</B></TD>
+			<TD>clumsy</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>477</TD>
+			<TD><B>unruly</B></TD>
+			<TD>boisterous, unrestrained</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>478</TD>
+			<TD><B>unwitting</B></TD>
+			<TD>unintentional</TD>
+			<TD>friends and enemies</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>479</TD>
+			<TD><B>urbane</B></TD>
+			<TD>elegant, sophisticated</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>480</TD>
+			<TD><B>usurp</B></TD>
+			<TD>seize power without authority</TD>
+			<TD>politics and tradition</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>481</TD>
+			<TD><B>vacuous, vacuity</B></TD>
+			<TD>empty</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>482</TD>
+			<TD><B>vanquish</B></TD>
+			<TD>conquer, defeat</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>483</TD>
+			<TD><B>vapid</B></TD>
+			<TD>dull, uninteresting</TD>
+			<TD>energy</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>484</TD>
+			<TD><B>venal(ity)</B></TD>
+			<TD>willing to accept bribes</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>485</TD>
+			<TD><B>venerable</B></TD>
+			<TD>commanding respect because of age, dignity</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>486</TD>
+			<TD><B>verbose</B></TD>
+			<TD>wordy, long-winded</TD>
+			<TD>argument and language</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>487</TD>
+			<TD><B>vicarious</B></TD>
+			<TD>felt indirectly by imagining someone else's experiences</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>488</TD>
+			<TD><B>vigilant</B></TD>
+			<TD>watchful, alert</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>489</TD>
+			<TD><B>vindicate, vindication</B></TD>
+			<TD>clear of blame or suspicion</TD>
+			<TD>law and order</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>490</TD>
+			<TD><B>vindictive</B></TD>
+			<TD>seeking revenge</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>491</TD>
+			<TD><B>virtuoso, virtuosity</B></TD>
+			<TD>one with exceptional musical skill</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>492</TD>
+			<TD><B>virulent</B></TD>
+			<TD>poisonous</TD>
+			<TD>war and peace</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>493</TD>
+			<TD><B>viscous</B></TD>
+			<TD>thick, sticky</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>494</TD>
+			<TD><B>vocation</B></TD>
+			<TD>career</TD>
+			<TD>money</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>495</TD>
+			<TD><B>vying</B></TD>
+			<TD>striving</TD>
+			<TD>give up?</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>496</TD>
+			<TD><B>waning</B></TD>
+			<TD>lessening</TD>
+			<TD>size, amount, location</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>497</TD>
+			<TD><B>wayward</B></TD>
+			<TD>selfish, stubborn</TD>
+			<TD>pride</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>498</TD>
+			<TD><B>wrath</B></TD>
+			<TD>anger</TD>
+			<TD>emotions</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>499</TD>
+			<TD><B>wry</B></TD>
+			<TD>clever or grim sense of humor</TD>
+			<TD>knowledge and skill</TD>
+		</TR>
+
+
+
+
+		<TR>
+			<TD>500</TD>
+			<TD><B>zealot</B></TD>
+			<TD>fanatic</TD>
+			<TD>politics and tradition</TD>
+		</TR>
