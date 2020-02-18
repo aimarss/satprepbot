@@ -33,7 +33,6 @@ for i, official in enumerate(officialslist):
 # ---------
 
 imageslist = []
-
 buttons_list = open("buttons.json")
 
 
@@ -51,6 +50,7 @@ def menu(id):
 
     # Добавляем их в markup
     list(map(lambda x: markup.add(x), btns))
+    # Отправляем
     bot.send_message(id, "Меню", reply_markup=markup)
 
 
