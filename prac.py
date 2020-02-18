@@ -23,7 +23,7 @@ for i, book in enumerate(bookslist):
     booktextlist[book["text"]] = i
 # ----------------
 
-officialslist = open_json("offical_books.json")
+officialslist = open_json("officals.json")
 officialstextlist = {}
 
 # Как и это
