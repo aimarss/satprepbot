@@ -51,6 +51,7 @@ def menu(id):
     markup.add(btn_books)
     markup.add(btn_officials)
     markup.add(btn_tests)
+    markup.add(btn_words)
     markup.add(btn_what)
     markup.add(btn_about)
     bot.send_message(id, "Меню", reply_markup=markup)
