@@ -7,9 +7,11 @@ bot = telebot.TeleBot("881872217:AAHjDOnnKDXr5D5LnyphqkO7Roe4QboXhTA")
 
 chat = []
 
+
 def open_json(s):
     with open(s) as f:
         return json.load(f)
+
 
 words = open_json("words.json")
 
@@ -33,7 +35,7 @@ for i, official in enumerate(officialslist):
 # ---------
 
 imageslist = []
-buttons_list = open("buttons.json")
+buttons_list = open_json("buttons.json")
 
 
 def menu(id):
@@ -43,7 +45,7 @@ def menu(id):
         map(
             lambda x: types.InlineKeyboardButton(
                 text=x["text"],
-                callback_data=x["callback_text"]), 
+                callback_data=x["callback_data"]),
             buttons_list
         )
     )
@@ -62,16 +64,16 @@ def send_welcome(message):
     menu(id)
 
 
-@bot.message_handler(commands=['menu'])
 @bot.callback_query_handler(func=lambda call: call.data == "menu")
 def menu_calling(call):
-    menu(chat[0])
+    id = call.message.json["chat"]["id"]
+    menu(id)
 
 
-@bot.callback_query_handler(func=lambda message: message.data == "words")
-@bot.message_handler(commands=["words"])
-def new_word(message):
-    bot.send_message(chat[0], "Выберите количетсво ")
+@bot.callback_query_handler(func=lambda call: call.data == "words")
+def new_word(call):
+    id = call.message.json["chat"]["id"]
+    bot.send_message(id, "Выберите количетсво ")
     numbers = list(range(500))
     answers = []
     markup = types.InlineKeyboardMarkup()
@@ -97,43 +99,56 @@ def new_word(message):
         btn = types.InlineKeyboardButton(text=answers[num], callback_data=answers[num] + " ! " + ques)
         markup.add(btn)
         opt.remove(num)
-    bot.send_message(chat[0], ques, reply_markup=markup)
+    bot.send_message(id, ques, reply_markup=markup)
 
 
 @bot.callback_query_handler(func=lambda call: (call.data.split(" ! "))[0] in meanings)
 def checking(call):
+    id = call.message.json["chat"]["id"]
     if words[meanings.index(call.data.split(" ! ")[0])]["word"] == call.data.split(" ! ")[1]:
-        bot.send_message(chat[0], "correct")
+        bot.send_message(id, "correct")
     else:
-        bot.send_message(chat[0], "incorrect")
+        bot.send_message(id, "incorrect")
+
+
+def find_int(s):
+    int_s = ""
+    for c in s:
+        if '0' <= c <= '9':
+            int_s += c
+    return int(int_s)
 
 
 @bot.callback_query_handler(func=lambda call: call.data == "books")
 def books(call):
+    id = call.message.json["chat"]["id"]
     markup = types.InlineKeyboardMarkup()
     for book in bookslist:
         btn_book = types.InlineKeyboardButton(text=book["text"], callback_data=book["text"])
         markup.add(btn_book)
-    bot.send_message(chat[0], "Книги", reply_markup=markup)
+    bot.send_message(id, "Книги", reply_markup=markup)
 
 
 @bot.callback_query_handler(func=lambda call: call.data in booktextlist.keys())
 def send_books(call):
-    bot.send_document(chat[0], bookslist[booktextlist[call.data]]["id"])
+    id = call.message.json["chat"]["id"]
+    bot.send_document(id, bookslist[booktextlist[call.data]]["id"])
 
 
 @bot.callback_query_handler(func=lambda call: call.data == "officials")
 def officials(call):
+    id = call.message.json["chat"]["id"]
     markup = types.InlineKeyboardMarkup()
     for offical in officialslist:
         btn_book = types.InlineKeyboardButton(text=offical["text"], callback_data=offical["text"])
         markup.add(btn_book)
-    bot.send_message(chat[0], "Прошедшие SAT", reply_markup=markup)
+    bot.send_message(id, "Прошедшие SAT", reply_markup=markup)
 
 
 @bot.callback_query_handler(func=lambda call: call.data in officialstextlist.keys())
 def send_books(call):
-    bot.send_document(chat[0], officialslist[officialstextlist[call.data]]["id"])
+    id = call.message.json["chat"]["id"]
+    bot.send_document(id, officialslist[officialstextlist[call.data]]["id"])
 
 
 @bot.message_handler(content_types=['document'])
