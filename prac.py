@@ -132,7 +132,13 @@ def books(call):
 @bot.callback_query_handler(func=lambda call: call.data in booktextlist.keys())
 def send_books(call):
     id = call.message.json["chat"]["id"]
-    bot.send_document(id, bookslist[booktextlist[call.data]]["id"])
+    book = bookslist[booktextlist[call.data]]
+    try:
+        if book["image_id"]:
+            bot.send_photo(id, book["image_id"])
+    except:
+        pass
+    bot.send_document(id, book["id"])
 
 
 @bot.callback_query_handler(func=lambda call: call.data == "officials")
