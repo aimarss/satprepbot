@@ -6,6 +6,29 @@ bot = telebot.TeleBot(TOKEN)
 
 cache = {}
 
+keyboards = {
+    "marks": [
+        "1", "2", "3", "4", "5",
+        "6", "7", "8", "9", "10",
+        "Выбрать позже"
+    ],
+    "yes/no": [
+        "Да", "Нет"
+    ],
+    "menu": [
+        "Поставить оценку",
+        "Оставить отзыв"
+    ]
+}
+
+reviews = []
+
+commands = [
+    "Меню",
+    "Поставить оценку",
+    "Оставить отзыв"
+]
+
 
 def is_int(s):
     try:
@@ -36,7 +59,7 @@ def start(message):
 
     cache[user_id] = {
         "current_state": "asking mark",
-        "temp_mark": None,
+        "temp_data": None,
         "mark": None
     }
 
@@ -44,10 +67,8 @@ def start(message):
         user_id, 
         "Добрый день! Поставтье оценку нашему боту от 1 до 10",
         reply_markup=createKeyboard(
-            5, 
-            "1", "2", "3", "4", "5",
-            "6", "7", "8", "9", "10",
-            "Выбрать позже"
+            row_width=5, 
+            args=keyboards["marks"]
         )
     )
 
@@ -60,36 +81,32 @@ def all_messages(message):
             user_id, 
             "Добрый день! Поставтье оценку нашему боту от 0 до 10",
             reply_markup=createKeyboard(
-                5, 
-                "1", "2", "3", "4", "5",
-                "6", "7", "8", "9", "10",
-                "Выбрать позже"
+                row_width=5, 
+                args=keyboards["marks"]
             )
         )
         return
     if cache[user_id]["current_state"] == "asking mark":
         if message.text == "Выбрать позже":
             cache[user_id]["current_state"] = "nothing"
-        if cache[user_id]["temp_mark"] is None:
+        if cache[user_id]["temp_data"] is None:
             if not is_int(message.text):
                 bot.send_message(
                     user_id, 
                     f"{ message.text } не является числом. Выберите любое число от 1 до 10",
                     reply_markup=createKeyboard(
-                        5, 
-                        "1", "2", "3", "4", "5",
-                        "6", "7", "8", "9", "10",
-                        "Выбрать позже"
+                        row_width=5, 
+                        args=keyboards["marks"]
                     )
                 )
                 return
             user_mark = int(message.text)
             if 1 <= user_mark <= 10:
-                cache[user_id]["temp_mark"] = user_mark
+                cache[user_id]["temp_data"] = user_mark
                 bot.send_message(
                     user_id, 
                     f"Вы уверены что хотите поставить оценку { user_mark }?",
-                    reply_markup=createKeyboard(2, "Да", "Нет")
+                    reply_markup=createKeyboard(2, keyboards["yes/no"])
                 )
                 return
             else:
@@ -97,32 +114,99 @@ def all_messages(message):
                     user_id, 
                     f"{ message.text } не может быть оценкой. Выберите другое число",
                     reply_markup=createKeyboard(
-                        5, 
-                        "1", "2", "3", "4", "5",
-                        "6", "7", "8", "9", "10",
-                        "Выбрать позже"
+                        row_width=5, 
+                        args=keyboards["marks"]
                     )
                 )
                 return
         else:
-            if message.text == "Да":
-                cache[user_id]["mark"] = cache[user_id]["temp_mark"]
-                cache[user_id]["temp_mark"] = None
-                cache[user_id]["current_state"] = "nothing"
-                bot.send_message(user_id, f" { cache[user_id]['mark'] } Успешно сохранено", reply_markup=emptyKeyboard())
+            if message.text not in keyboards["yes/no"]:
+                bot.send_message(user_id, "Выберите Да/Нет", reply_markup=createKeyboard(2, keyboards["yes/no"]))
                 return
-            elif message.text == "Нет":
-                cache[user_id]["temp_mark"] = None
+            i = keyboards["yes/no"].index(message.text)
+            if i == 0:
+                cache[user_id]["mark"] = cache[user_id]["temp_data"]
+                cache[user_id]["temp_data"] = None
+                cache[user_id]["current_state"] = "nothing"
+                bot.send_message(user_id, "Спасибо за оставленную оценку, не забудьте оставить отзыв!", reply_markup=createKeyboard(1, "Меню"))
+                return
+            elif i == 1:
+                cache[user_id]["temp_data"] = None
                 cache[user_id]["current_state"] = "nothing"
                 bot.send_message(
                     user_id, 
                     "Выберите любое число от 1 до 10",
                     reply_markup=createKeyboard(
-                        5, 
-                        "1", "2", "3", "4", "5",
-                        "6", "7", "8", "9", "10",
-                        "Выбрать позже"
+                        row_width=5, 
+                        args=keyboards["marks"]
                     )
+                )
+                return
+    elif cache[user_id]["current_state"] == "nothing":
+        if message.text in commands:
+            i = commands.index(message.text)
+            if i == 0: # Меню
+                bot.send_message(
+                    user_id,
+                    "Меню",
+                    reply_markup=createKeyboard(
+                        row_width=2,
+                        args=keyboards["menu"]
+                    )
+                )
+            elif i == 1: # Поставить оценку
+                cache[user_id]["current_state"] = "asking mark"
+                bot.send_message(
+                    user_id, 
+                    "Поставтье оценку нашему боту от 1 до 10",
+                    reply_markup=createKeyboard(
+                        row_width=5, 
+                        args=keyboards["marks"]
+                    )
+                )
+            elif i == 2: # Оставить отзыв
+                cache[user_id]["current_state"] = "asking review"
+                bot.send_message(
+                    user_id,
+                    "Напишите отзыв в одном сообщении",
+                    reply_markup=emptyKeyboard()
+                )
+    elif cache[user_id]["current_state"] == "asking review":
+        review = message.text
+        if cache[user_id]["temp_data"] is None:
+            cache[user_id]["temp_data"] = review
+            bot.send_message(
+                user_id,
+                "Вы точно хотите оставить этот отзыв?",
+                reply_markup=createKeyboard(
+                    2,
+                    keyboards["yes/no"]
+                )
+            )
+        else:
+            if message.text not in keyboards["yes/no"]:
+                bot.send_message(user_id, "Выберите Да/Нет", reply_markup=createKeyboard(2, keyboards["yes/no"]))
+                return
+            i = keyboards["yes/no"].index(message.text)
+            if i == 0:
+                review = cache[user_id]["temp_data"]
+                cache[user_id]["temp_data"] = None
+                cache[user_id]["current_state"] = "nothing"
+
+                reviews.append({
+                    "user_id": user_id,
+                    "review": review
+                })
+
+                bot.send_message(user_id, "Спасибо за оставленный отзыв!", reply_markup=createKeyboard(1, "Меню"))
+                return
+            elif i == 1:
+                cache[user_id]["temp_data"] = None
+                cache[user_id]["current_state"] = "nothing"
+                bot.send_message(
+                    user_id, 
+                    "Напишите отзыв в одном сообщении",
+                    reply_markup=emptyKeyboard()
                 )
                 return
 
