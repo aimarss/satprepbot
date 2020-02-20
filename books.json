@@ -1,28 +1,37 @@
 [
     {
-        "text": "Kaplan Prep Book 4/5",
+        "text": "Magoosh SAT",
+        "id": "BQACAgIAAxkBAAIBm15Nx_xCiqlLjJcEUEJ3BJ-r4nltAAK7BQACRCdwSkQokzIel7_dGAQ"
+    },
+    {
+        "text": "Kaplan Prep Book",
         "id": "BQACAgIAAxkBAAMhXklypBJyY-RvQGXBWa8SARLgIycAAnMFAAL9rFBKk7m2Y4uCJmsYBA",
-        "image_id": "AgACAgIAAxkBAAIBeV5NYIeK_zJ6j6KwDB_O_amd8w8YAAK3rDEbRExwSt5XBE3riNlUWsh-kS4AAwEAAwIAA3cAA4UVAAIYBA"
+        "image_id": "AgACAgIAAxkBAAIBeV5NYIeK_zJ6j6KwDB_O_amd8w8YAAK3rDEbRExwSt5XBE3riNlUWsh-kS4AAwEAAwIAA3cAA4UVAAIYBA",
+        "description": "Still, some of you either won't have the time or motivation to prep better. If you’re one of those just hoping to get the SAT over with, I recommend using Kaplan’s SAT Prep Plus 2018. It’s an all-in-one book that covers the three sections and has a wide assortment of practice questions and tests."
     }, 
     {
-        "text": "Cracking the SAT 5/5", 
+        "text": "Cracking the SAT",
         "id": "BQACAgIAAxkBAAM0Xkl2loQAAdwDhMAIDdyN5oE9ywehAALZBAACgTRISgnQSBWIN8vDGAQ",
-        "image_id": "AgACAgIAAxkBAAIBel5NYKAIUWbl8WggauvxuwgEEmq5AAK2rDEbRExwSrjTzeWpPZSApg_BDgAEAQADAgADeQADvxIDAAEYBA"
+        "image_id": "AgACAgIAAxkBAAIBel5NYKAIUWbl8WggauvxuwgEEmq5AAK2rDEbRExwSrjTzeWpPZSApg_BDgAEAQADAgADeQADvxIDAAEYBA",
+        "description": "Similar to Barron's, The Princeton Review's Cracking the SAT, 2019 Edition prep book provides a comprehensive review of the SAT, covering concepts you need to know, such as grammar rules and algebraic functions, along with strategies for approaching the test questions and managing your time."
     }, 
     {
         "text": "SAT Black Book 2nd Edition", 
         "id": "BQACAgIAAxkBAAONXkm-cxWP8ihZav-GlLb5DW48SX8AArEDAAINAVBKAAHcP-gSeMQcGAQ",
-        "image_id": "AgACAgIAAxkBAAIBeF5NYG1Oi5P-HRFRJaGO4eb159uzAAKzrDEblW1xSlDLHiSDG_IbU7rCDwAEAQADAgADeAADedEDAAEYBA"
+        "image_id": "AgACAgIAAxkBAAIBeF5NYG1Oi5P-HRFRJaGO4eb159uzAAKzrDEblW1xSlDLHiSDG_IbU7rCDwAEAQADAgADeAADedEDAAEYBA",
+        "description": "I highly recommend SAT Prep Black Book for its insightful strategies and test advice. The SAT Black Book, as it's called, was written by Mike Barrett, who's taken the time to understand the test inside and out. In it, he goes over the different types of questions and introduces critical tips, such as how to recognize tricky wording and \"distractor\" answer choices."
     }, 
     {
         "text": "Erica Meltzer's SAT Grammar Workbook", 
         "id": "BQACAgIAAxkBAAOOXkm_pQ_uKcSTWf4Ie7HBe3-FOfsAAosGAAJNR1BKZBaOG_zIDYYYBA",
-        "image_id": "AgACAgIAAxkBAAIBd15NYDg_j9_cHsno7Nzy5xN-UrznAAKxrDEbRExwSu9EZdqUclTWlZ7CDwAEAQADAgADeAADn7UEAAEYBA"
+        "image_id": "AgACAgIAAxkBAAIBd15NYDg_j9_cHsno7Nzy5xN-UrznAAKxrDEbRExwSu9EZdqUclTWlZ7CDwAEAQADAgADeAADn7UEAAEYBA",
+        "description": "Erica Meltzer's Ultimate Guide to SAT Grammar clearly articulates the important grammar rules you'll need to know for the SAT Writing section and does a fantastic job getting you used to how the section will look and what kinds of questions you'll be asked on test day."
     }, 
     {
         "text": "Barron's New SAT", 
         "id": "BQACAgIAAxkBAAOQXknADVX98nB4lC6ybVdTKdKXpMcAAkIFAAKBNFBKvAUG_Id1rYQYBA",
-        "image_id": "AgACAgIAAxkBAAIBe15NYMbkqwO6ZfLlewaRHFAb3ExnAAKyrDEbRExwSoCbakS2_KoU5oRvkS4AAwEAAwIAA3kAA20UAAIYBA"
+        "image_id": "AgACAgIAAxkBAAIBe15NYMbkqwO6ZfLlewaRHFAb3ExnAAKyrDEbRExwSoCbakS2_KoU5oRvkS4AAwEAAwIAA3kAA20UAAIYBA",
+        "description": "Barron's SAT, 29th Edition is another thorough prep book that offers ample content review, sample questions, and SAT practice tests."
     }, 
     {
         "text": "The College Panda SAT Essay", 
