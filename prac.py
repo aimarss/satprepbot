@@ -38,9 +38,23 @@ for i, official in enumerate(officialslist):
 
 funcs = open_json("buttons.json")
 
+with open("sat.txt", "r", encoding="utf-8") as f:
+    sattext = f.read()
+
+with open("about.txt", "r", encoding="utf-8") as k:
+    abouttext = k.read()
+
+hours = []
+for i in range(24):
+    hours.append(str(i))
+
+minutes = []
+for k in range(61):
+    minutes.append(str(k))
+
 
 def menu(chat_id):
-    markup = types.ReplyKeyboardMarkup()
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btns = list(
         map(
             lambda x: types.KeyboardButton(
@@ -50,6 +64,16 @@ def menu(chat_id):
     )
     list(map(lambda x: markup.add(x), btns))
     bot.send_message(chat_id, "Меню", reply_markup=markup)
+
+
+def what(message):
+    chat_id = message.json["chat"]["id"]
+    bot.send_message(chat_id, text=sattext)
+
+
+def about(message):
+    chat_id = message.json["chat"]["id"]
+    bot.send_message(chat_id, text=abouttext)
 
 
 @bot.message_handler(commands=['start'])
@@ -76,15 +100,17 @@ def calling(message):
     elif message_type == "tests":
         print("tests")
     elif message_type == "words":
+        words(message)
+    elif message_type == "new_words":
         new_word(message)
     elif message_type == "what":
-        print("what")
+        what(message)
     elif message_type == "about":
-        print('about')
+        about(message)
 
 
 @bot.message_handler(func=lambda message: message.text == "words")
-def new_word(message):
+def words(message):
     chat_id = message.json["chat"]["id"]
     bot.send_message(chat_id, "Выберите количетсво ")
     numbers = list(range(500))
@@ -171,9 +197,28 @@ def add_book(message):
 
 
 @bot.message_handler(commands=["everyday"])
-def everyday(message):
+def new_word(message):
     chat_id = message.json["chat"]["id"]
-    sec = get_current_seconds() + 10
+    markup = types.InlineKeyboardMarkup()
+    for hour in hours:
+        markup.add(types.InlineKeyboardButton(hour, callback_data=hour))
+    bot.send_message(chat_id, "Choose Hour", reply_markup=markup)
+
+
+@bot.callback_query_handler(func=lambda call: call.data in hours)
+def mins(call):
+    chat_id = call.message.json["chat"]["id"]
+    markup = types.InlineKeyboardMarkup()
+    for minut in minutes:
+        markup.add(types.InlineKeyboardButton(minut, callback_data=call.data + " : " + minut))
+    bot.send_message(chat_id, "Choose minute", reply_markup=markup)
+
+
+@bot.callback_query_handler(func=lambda call: call.data.split(" : ")[1] in minutes)
+def adding(call):
+    chat_id = call.message.json["chat"]["id"]
+    time = call.data.split(" : ")
+    sec = int(time[0]) * 3600 + int(time[1]) * 60
     smth = {
         "sender_id": chat_id,
         "time": sec
