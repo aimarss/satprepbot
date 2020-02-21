@@ -6,7 +6,7 @@ import random
 import emoji
 from sender import start_sender, get_current_seconds
 
-TOKEN = "881872217:AAHjDOnnKDXr5D5LnyphqkO7Roe4QboXhTA"
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
 
 queue = Queue(maxsize=100)
