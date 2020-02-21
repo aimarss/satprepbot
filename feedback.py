@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-TOKEN = "1064402448:AAGtL_ll-qtDRf2onRHr931KeZg1qolzFXQ"
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
 
 cache = {}
