@@ -17,6 +17,7 @@ sent = [
 #   sender_id
 ]
 
+
 def open_json(s):
     with open(s) as f:
         return json.load(f)
