@@ -3,7 +3,6 @@ import lxml
 import json
 
 words = []
-
 with open("words.txt") as f:
     soup = BeautifulSoup(f, "lxml")
     trs = soup.find_all("tr")
