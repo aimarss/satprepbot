@@ -1,10 +1,13 @@
 import telebot
+import json
 from telebot import types
-from prac import open_json
 
+def open_json(s):
+    with open(s) as f:
+        return json.load(f)
 
 credentials = open_json("../safety/credentials.json")
-TOKEN = credentials["token"]
+TOKEN = credentials["feedback"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
 cache = {}

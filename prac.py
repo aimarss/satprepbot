@@ -5,21 +5,26 @@ from multiprocessing import Process, Queue
 import random
 import emoji
 from sender import start_sender, get_current_seconds
-
-TOKEN = ""
-bot = telebot.TeleBot(TOKEN)
-
-queue = Queue(maxsize=100)
+from feedback import createKeyboard, emptyKeyboard, is_int
 
 
 def open_json(s):
     with open(s) as f:
         return json.load(f)
 
+credentials = open_json("../safety/credentials.json")
+TOKEN = credentials["main"]["token"]
+bot = telebot.TeleBot(TOKEN)
+
+queue = Queue(maxsize=100)
+max_questions = 100
+cache = {}
+
 
 words = open_json("words.json")
 
 meanings = list(map(lambda x: x["meaning"], words))
+words_list = list(map(lambda x: x["word"], words))
 bookslist = open_json("books.json")
 
 # Нужно переделать
@@ -51,6 +56,13 @@ for i in range(24):
 minutes = []
 for k in range(61):
     minutes.append(str(k))
+
+
+def standard_number_questions():
+    return createKeyboard(
+                    4,
+                    ["10", "30", "50", "70"]
+                )
 
 
 def menu(chat_id):
@@ -100,7 +112,7 @@ def calling(message):
     elif message_type == "tests":
         print("tests")
     elif message_type == "words":
-        words(message)
+        words_(message)
     elif message_type == "new_words":
         new_word(message)
     elif message_type == "what":
@@ -109,36 +121,103 @@ def calling(message):
         about(message)
 
 
-@bot.message_handler(func=lambda message: message.text == "words")
-def words(message):
-    chat_id = message.json["chat"]["id"]
-    bot.send_message(chat_id, "Выберите количетсво ")
-    numbers = list(range(500))
+
+def get_answer_keyboard(question, n=4, width=2):
     answers = []
-    markup = types.InlineKeyboardMarkup()
+    right_answer = words[words_list.index(question)]["meaning"]
+    for i in range(n - 1):
+        new_a = {"word": ""}
+        while new_a["word"] in ["", question]:
+            new_a = random.choice(words)
+        answers.append(new_a["meaning"])
+    answers.append(right_answer)
+    random_answers = []
+    for i in range(len(answers)):
+        random_answers.append(answers.pop(random.randint(0, len(answers) - 1)))
+    return createKeyboard(width, random_answers)
 
-    ques_n = random.choice(numbers)
 
-    ques = words[ques_n]["word"]
-    ans = words[ques_n]["meaning"]
+def get_questions(n):
+    questions = []
+    for i in range(n):
+        new_q = {"word": ""}
+        while new_q["word"] in [""] + questions:
+            new_q = random.choice(words)
+        questions.append(new_q["word"])
+    return questions
 
-    answers.append(ans)
-    numbers.remove(ques_n)
 
-    for i in range(3):
-        wr_n = random.choice(numbers)
-        wr = words[wr_n]["meaning"]
-        answers.append(wr)
+def send_question(chat_id):
+    current_question = cache[chat_id]['current_question']
+    bot.send_message(
+        chat_id,
+        f"Слово №{ current_question + 1 }: {cache[chat_id]['questions'][current_question]}",
+        reply_markup=get_answer_keyboard(cache[chat_id]["questions"][current_question])
+    )
 
-        numbers.remove(wr_n)
 
-    opt = list(range(len(answers)))
-    for j in range(len(answers)):
-        num = random.choice(opt)
-        btn = types.InlineKeyboardButton(text=answers[num], callback_data=answers[num] + " ! " + ques)
-        markup.add(btn)
-        opt.remove(num)
-    bot.send_message(chat_id, ques, reply_markup=markup)
+@bot.message_handler(func=lambda message: message.text == "words")
+def words_(message):
+    chat_id = message.json["chat"]["id"]
+    if chat_id in cache.keys():
+        send_question(chat_id)
+        return
+    cache[chat_id] = {
+        "current_question": -1,
+        "total_question": 0,
+        "right_answers": 0,
+        "questions": []
+    }
+    bot.send_message(
+        chat_id, 
+        "Выберите количетсво вопросов", 
+        reply_markup=standard_number_questions()
+    )
+
+
+@bot.message_handler(func=lambda message: message.json["chat"]["id"] in cache.keys())
+def next_word(message):
+    chat_id = message.json["chat"]["id"]
+    if len(cache[chat_id]["questions"]) == 0:
+        if not is_int(message.text):
+            bot.send_message(
+                chat_id, 
+                "Выберите количетсво вопросов",
+                reply_markup=standard_number_questions()
+            )
+            return
+        number_questions = int(message.text)
+        if number_questions > max_questions:
+            bot.send_message(
+                chat_id, 
+                "Выберите количетсво вопросов" + f" не превышающие { max_questions }",
+                reply_markup=standard_number_questions()
+            )
+            return
+        cache[chat_id] = {
+            "current_question": 0,
+            "total_question": number_questions,
+            "right_answers": 0,
+            "questions": get_questions(number_questions)
+        }
+        send_question(chat_id)
+        return
+    
+    answer = message.text
+
+    right_answer = words[words_list.index(cache[chat_id]["questions"][cache[chat_id]["current_question"]])]["meaning"]
+    if answer == right_answer:
+        cache[chat_id]["right_answers"] += 1
+
+    if cache[chat_id]["current_question"] == cache[chat_id]["total_question"] - 1:
+        bot.send_message(
+            chat_id,
+            f"Вы дошли до конца теста! У вас { cache[chat_id]['right_answers'] } из { cache[chat_id]['total_question'] }",
+            reply_markup=emptyKeyboard()
+        )
+        return
+    cache[chat_id]["current_question"] += 1
+    send_question(chat_id)
 
 
 @bot.callback_query_handler(func=lambda call: (call.data.split(" ! "))[0] in meanings)
