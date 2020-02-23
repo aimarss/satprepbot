@@ -1,4 +1,4 @@
-<TR>
+TR>
 			<TD>1</TD>
 			<TD><B>abate</B></TD>
 			<TD>lessen</TD>

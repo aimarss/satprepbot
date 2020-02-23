@@ -6,7 +6,8 @@ def open_json(s):
     with open(s) as f:
         return json.load(f)
 
-credentials = open_json("../safety/credentials.json")
+
+credentials = open_json("safety/credentials.json")
 TOKEN = credentials["feedback"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
@@ -51,6 +52,7 @@ def createKeyboard(row_width: int, args):
         btns.append(btn_i)
     markup.add(*btns)
     return markup
+
 
 def emptyKeyboard():
     return types.ReplyKeyboardRemove(selective=False)

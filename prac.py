@@ -4,7 +4,7 @@ import json
 from multiprocessing import Process, Queue
 import random
 import emoji
-from sender import start_sender, get_current_seconds
+from sender import start_sender
 from feedback import createKeyboard, emptyKeyboard, is_int
 
 
@@ -12,7 +12,10 @@ def open_json(s):
     with open(s) as f:
         return json.load(f)
 
-credentials = open_json("../safety/credentials.json")
+
+times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
+
+credentials = open_json("safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
@@ -59,10 +62,7 @@ for k in range(61):
 
 
 def standard_number_questions():
-    return createKeyboard(
-                    4,
-                    ["10", "30", "50", "70"]
-                )
+    return createKeyboard(4, ["10", "30", "50", "70"])
 
 
 def menu(chat_id):
@@ -95,6 +95,14 @@ def send_welcome(message):
     menu(chat_id)
 
 
+@bot.message_handler(content_types=['document'])
+def add_book(message):
+    file_id = message.document.file_id
+    title = message.document.file_name
+    bookslist.append({"text": title, "id": file_id})
+    print(bookslist[-1])
+
+
 @bot.callback_query_handler(func=lambda call: call.data == "menu")
 def menu_calling(call):
     chat_id = call.message.json["chat"]["id"]
@@ -119,7 +127,6 @@ def calling(message):
         what(message)
     elif message_type == "about":
         about(message)
-
 
 
 def get_answer_keyboard(question, n=4, width=2):
@@ -220,15 +227,6 @@ def next_word(message):
     send_question(chat_id)
 
 
-@bot.callback_query_handler(func=lambda call: (call.data.split(" ! "))[0] in meanings)
-def checking(call):
-    chat_id = call.message.json["chat"]["id"]
-    if words[meanings.index(call.data.split(" ! ")[0])]["word"] == call.data.split(" ! ")[1]:
-        bot.send_message(chat_id, "correct")
-    else:
-        bot.send_message(chat_id, "incorrect")
-
-
 @bot.callback_query_handler(func=lambda call: call.data == "books")
 def books(call):
     chat_id = call.json["chat"]["id"]
@@ -267,36 +265,49 @@ def send_books(call):
     bot.send_document(chat_id, officialslist[officialstextlist[call.data]]["id"])
 
 
-@bot.message_handler(content_types=['document'])
-def add_book(message):
-    file_id = message.document.file_id
-    title = message.document.file_name
-    bookslist.append({"text": title, "id": file_id})
-    print(bookslist[-1])
-
-
 @bot.message_handler(commands=["everyday"])
 def new_word(message):
     chat_id = message.json["chat"]["id"]
-    markup = types.InlineKeyboardMarkup()
-    for hour in hours:
-        markup.add(types.InlineKeyboardButton(hour, callback_data=hour))
-    bot.send_message(chat_id, "Choose Hour", reply_markup=markup)
+    bot.send_message(chat_id, "Choose Hour", reply_markup=createKeyboard(row_width=4, args=times))
 
 
-@bot.callback_query_handler(func=lambda call: call.data in hours)
-def mins(call):
-    chat_id = call.message.json["chat"]["id"]
-    markup = types.InlineKeyboardMarkup()
-    for minut in minutes:
-        markup.add(types.InlineKeyboardButton(minut, callback_data=call.data + " : " + minut))
-    bot.send_message(chat_id, "Choose minute", reply_markup=markup)
+@bot.message_handler(func= lambda message: message.text in times)
+def set_time(message):
+    chat_id = message.json["chat"]["id"]
+    text = message.text
+    if text == "Other":
+        other(message)
+    else:
+        time = text.split(":")
+        sec = int(time[0]) * 3600 + int(time[1]) *60
+        smth = {
+            "sender_id": chat_id,
+            "time": sec
+        }
+        try:
+            queue.put_nowait(smth)
+        except Exception as e:
+            print(e)
 
 
-@bot.callback_query_handler(func=lambda call: call.data.split(" : ")[1] in minutes)
-def adding(call):
-    chat_id = call.message.json["chat"]["id"]
-    time = call.data.split(" : ")
+def other(message):
+    chat_id = message.json["chat"]["id"]
+    bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
+
+
+def time_check(text):
+    text = text.split(":")
+    if int(text[0]) in range(24) and int(text[1]) in range(60):
+        return True
+    else:
+        return False
+
+
+@bot.message_handler(func=lambda message: time_check(message.text))
+def opt_time(message):
+    chat_id = message.json["chat"]["id"]
+    text = message.text
+    time = text.split(":")
     sec = int(time[0]) * 3600 + int(time[1]) * 60
     smth = {
         "sender_id": chat_id,
