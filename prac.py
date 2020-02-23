@@ -9,14 +9,17 @@ from functions import *
 
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
-credentials = open_json("safety/credentials.json")
+credentials = open_json("../safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
 queue = Queue(maxsize=100)
 max_questions = 100
 cache = {}
-
+states = {
+    "words": "asking words",
+    "everyday": "asking time"
+}
 
 words = open_json("words.json")
 
@@ -55,8 +58,18 @@ for k in range(61):
     minutes.append(str(k))
 
 
+def user_in_cache(message):
+    return message.json["chat"]["id"] in cache.keys()
+
+
+def cached_state(message, state):
+    if user_in_cache(message):
+        return cache[message.json["chat"]["id"]]["state"] == state
+    return False
+
+
 def standard_number_questions():
-    return createKeyboard(4, ["10", "30", "50", "70"])
+    return createKeyboardWithMenu(4, ["10", "30", "50", "70"])
 
 
 def menu(chat_id):
@@ -82,9 +95,19 @@ def about(message):
     bot.send_message(chat_id, text=abouttext)
 
 
+@bot.message_handler(func=lambda message: message.text == "Вернуться в меню")
+def back_to_menu(message):
+    chat_id = message.json["chat"]["id"]
+    if user_in_cache(message):
+        cache.pop(chat_id)
+    menu(chat_id)
+
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     chat_id = message.json["chat"]["id"]
+    if user_in_cache(message):
+        cache.pop(chat_id)
     bot.send_message(chat_id, "Привет! Это бот помогающий в подготовке к SAT")
     menu(chat_id)
 
@@ -121,6 +144,8 @@ def calling(message):
         what(message)
     elif message_type == "about":
         about(message)
+    elif message_type == "everyday":
+        new_word(message)
 
 
 def get_answer_keyboard(question, n=4, width=2):
@@ -135,7 +160,7 @@ def get_answer_keyboard(question, n=4, width=2):
     random_answers = []
     for i in range(len(answers)):
         random_answers.append(answers.pop(random.randint(0, len(answers) - 1)))
-    return createKeyboard(width, random_answers)
+    return createKeyboardWithMenu(width, random_answers)
 
 
 def get_questions(n):
@@ -164,6 +189,7 @@ def words_(message):
         send_question(chat_id)
         return
     cache[chat_id] = {
+        "state": states["words"],
         "current_question": -1,
         "total_question": 0,
         "right_answers": 0,
@@ -176,7 +202,7 @@ def words_(message):
     )
 
 
-@bot.message_handler(func=lambda message: message.json["chat"]["id"] in cache.keys())
+@bot.message_handler(func=lambda message: cached_state(message, states["words"]))
 def next_word(message):
     chat_id = message.json["chat"]["id"]
     if len(cache[chat_id]["questions"]) == 0:
@@ -196,6 +222,7 @@ def next_word(message):
             )
             return
         cache[chat_id] = {
+            "state": states["words"],
             "current_question": 0,
             "total_question": number_questions,
             "right_answers": 0,
@@ -262,7 +289,7 @@ def send_books(call):
 @bot.message_handler(commands=["everyday"])
 def new_word(message):
     chat_id = message.json["chat"]["id"]
-    bot.send_message(chat_id, "Choose Hour", reply_markup=createKeyboard(row_width=4, args=times))
+    bot.send_message(chat_id, "Choose Hour", reply_markup=createKeyboardWithMenu(row_width=4, args=times))
 
 
 @bot.message_handler(func= lambda message: message.text in times)
@@ -273,7 +300,7 @@ def set_time(message):
         other(message)
     else:
         time = text.split(":")
-        sec = int(time[0]) * 3600 + int(time[1]) *60
+        sec = int(time[0]) * 3600 + int(time[1]) * 60
         smth = {
             "sender_id": chat_id,
             "time": sec
@@ -286,10 +313,13 @@ def set_time(message):
 
 def other(message):
     chat_id = message.json["chat"]["id"]
+    cache[chat_id] = {
+        "state": states["everyday"]
+    }
     bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
 
 
-@bot.message_handler(func=lambda message: time_check(message.text))
+@bot.message_handler(func=lambda message: cached_state(message, states["everyday"]))
 def opt_time(message):
     chat_id = message.json["chat"]["id"]
     text = message.text
@@ -303,6 +333,7 @@ def opt_time(message):
         queue.put_nowait(smth)
     except Exception as e:
         print(e)
+    cache.pop(chat_id)
 
 
 if __name__ == "__main__":

@@ -15,6 +15,10 @@ def is_int(s):
         return False
 
 
+def createKeyboardWithMenu(row_width: int, args):
+    return createKeyboard(row_width, args + ["Вернуться в меню"])
+
+
 def createKeyboard(row_width: int, args):
     if not is_int(row_width):
         raise TypeError
