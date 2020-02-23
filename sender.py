@@ -4,6 +4,7 @@ import datetime as date
 import json
 import random
 from multiprocessing import Process, Queue
+from functions import *
 
 
 senders = [
@@ -18,20 +19,9 @@ sent = [
 ]
 
 
-def open_json(s):
-    with open(s) as f:
-        return json.load(f)
-
-
 words = open_json("words.json")
 
 number_senderP = 4
-
-
-def get_time(t=None):
-    t = time.time() if t is None else t
-    struct_time = time.gmtime(t + 6 * 60 * 60)
-    return time.strftime("%d-%m-%Y: %Hh %Mm %Ss", struct_time)
 
 
 def get_current_seconds():

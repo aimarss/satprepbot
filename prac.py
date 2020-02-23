@@ -5,13 +5,7 @@ from multiprocessing import Process, Queue
 import random
 import emoji
 from sender import start_sender
-from feedback import createKeyboard, emptyKeyboard, is_int
-
-
-def open_json(s):
-    with open(s) as f:
-        return json.load(f)
-
+from functions import *
 
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
@@ -293,14 +287,6 @@ def set_time(message):
 def other(message):
     chat_id = message.json["chat"]["id"]
     bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
-
-
-def time_check(text):
-    text = text.split(":")
-    if int(text[0]) in range(24) and int(text[1]) in range(60):
-        return True
-    else:
-        return False
 
 
 @bot.message_handler(func=lambda message: time_check(message.text))

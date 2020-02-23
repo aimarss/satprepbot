@@ -1,10 +1,7 @@
 import telebot
 import json
 from telebot import types
-
-def open_json(s):
-    with open(s) as f:
-        return json.load(f)
+from functions import open_json, createKeyboard, emptyKeyboard, is_int
 
 
 credentials = open_json("safety/credentials.json")
@@ -32,30 +29,6 @@ text = {
     "thanks": "Спасибо за оставленный отзыв!",
     "condition": "Напишите отзыв в одном сообщении"
 }
-
-
-def is_int(s):
-    try:
-        int(s)
-        return True
-    except:
-        return False
-
-
-def createKeyboard(row_width: int, args):
-    if not is_int(row_width):
-        raise TypeError
-    markup = types.ReplyKeyboardMarkup(row_width=row_width)
-    btns = []
-    for i in args:
-        btn_i = types.KeyboardButton(i)
-        btns.append(btn_i)
-    markup.add(*btns)
-    return markup
-
-
-def emptyKeyboard():
-    return types.ReplyKeyboardRemove(selective=False)
 
 
 @bot.message_handler(commands=["start"])
