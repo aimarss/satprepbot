@@ -25,21 +25,22 @@ words = open_json("words.json")
 
 meanings = list(map(lambda x: x["meaning"], words))
 words_list = list(map(lambda x: x["word"], words))
+
+posts_list = open_json("posts.json")
+poststextlist = {v: k for k, v in enumerate(posts_list)}
+
+
 bookslist = open_json("books.json")
 
-# Нужно переделать
 booktextlist = {}
 for i, book in enumerate(bookslist):
     booktextlist[book["text"]] = i
-# ----------------
 
 officialslist = open_json("officals.json")
 officialstextlist = {}
 
-# Как и это
 for i, official in enumerate(officialslist):
     officialstextlist[official["text"]] = i
-# ---------
 
 funcs = open_json("buttons.json")
 
@@ -146,6 +147,8 @@ def calling(message):
         about(message)
     elif message_type == "everyday":
         new_word(message)
+    elif message_type == "posts":
+        posts(message)
 
 
 def get_answer_keyboard(question, n=4, width=2):
@@ -334,6 +337,22 @@ def opt_time(message):
     except Exception as e:
         print(e)
     cache.pop(chat_id)
+
+
+@bot.message_handler(func=lambda message: message.text == "posts")
+def posts(message):
+    chat_id = message.json["chat"]["id"]
+    markup = types.InlineKeyboardMarkup()
+    for post in posts_list:
+        btn_book = types.InlineKeyboardButton(text=post["text"], callback_data=post["text"])
+        markup.add(btn_book)
+    bot.send_message(chat_id, "Posts and advices", reply_markup=markup)
+
+
+@bot.callback_query_handler(func=lambda call: call.data in poststextlist.keys())
+def send_books(call):
+    chat_id = call.message.json["chat"]["id"]
+    bot.send_document(chat_id, posts_list[poststextlist[call.data]]["text"])
 
 
 if __name__ == "__main__":
