@@ -20,8 +20,12 @@ sent = [
 
 
 words = open_json("words.json")
+credentials = open_json("safety/credentials.json")
+TOKEN = credentials["main"]["token"]
 
 number_senderP = 4
+
+bot = telebot.TeleBot(TOKEN)
 
 
 def get_current_seconds():
@@ -32,12 +36,10 @@ def get_current_seconds():
 
 def get_new_message():
     word = random.choice(words)
-    return "Word of the Day: " + word["word"] + " - " + word["meaning"]
+    return "Word of the Day: \n" + word["word"] + ": \n" + word["meaning"]
 
 
 def send(input: Queue):
-    TOKEN = "881872217:AAHjDOnnKDXr5D5LnyphqkO7Roe4QboXhTA"
-    bot = telebot.TeleBot(TOKEN)
     while True:
         try:
             sender_id = input.get_nowait()
@@ -52,7 +54,6 @@ def start_sender(input):
     global sent
 
     output = Queue(maxsize=100)
-
     senders_processes = []
     for i in range(number_senderP):
         new_p = Process(target=send, args=(output,))
@@ -63,6 +64,7 @@ def start_sender(input):
         try:
             data = input.get_nowait()
             print(get_time() + f" new data recieved { data }")
+            bot.send_message(data["sender_id"], "Everyday words at " + data["hours"])
             senders.append(
                 {
                     "sender": data["sender_id"],

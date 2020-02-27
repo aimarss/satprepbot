@@ -9,7 +9,7 @@ from functions import *
 
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
-credentials = open_json("../safety/credentials.json")
+credentials = open_json("safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
@@ -49,14 +49,6 @@ with open("sat.txt", "r", encoding="utf-8") as f:
 with open("about.txt", "r", encoding="utf-8") as k:
     abouttext = k.read()
 
-hours = []
-for i in range(24):
-    hours.append(str(i))
-
-minutes = []
-for k in range(61):
-    minutes.append(str(k))
-
 
 def user_in_cache(message):
     return message.json["chat"]["id"] in cache.keys()
@@ -82,7 +74,7 @@ def menu(chat_id):
         )
     )
     list(map(lambda x: markup.add(x), btns))
-    bot.send_message(chat_id, "Меню", reply_markup=markup)
+    bot.send_message(chat_id, "Menu", reply_markup=markup)
 
 
 def what(message):
@@ -95,7 +87,7 @@ def about(message):
     bot.send_message(chat_id, text=abouttext)
 
 
-@bot.message_handler(func=lambda message: message.text == "Вернуться в меню")
+@bot.message_handler(func=lambda message: message.text == "Back to menu")
 def back_to_menu(message):
     chat_id = message.json["chat"]["id"]
     if user_in_cache(message):
@@ -108,7 +100,7 @@ def send_welcome(message):
     chat_id = message.json["chat"]["id"]
     if user_in_cache(message):
         cache.pop(chat_id)
-    bot.send_message(chat_id, "Привет! Это бот помогающий в подготовке к SAT")
+    bot.send_message(chat_id, "Hi! This is a bot that helps you in preparation for the SAT")
     menu(chat_id)
 
 
@@ -177,7 +169,7 @@ def send_question(chat_id):
     current_question = cache[chat_id]['current_question']
     bot.send_message(
         chat_id,
-        f"Слово №{ current_question + 1 }: {cache[chat_id]['questions'][current_question]}",
+        f"Word #{ current_question + 1 }: {cache[chat_id]['questions'][current_question]}",
         reply_markup=get_answer_keyboard(cache[chat_id]["questions"][current_question])
     )
 
@@ -197,7 +189,7 @@ def words_(message):
     }
     bot.send_message(
         chat_id, 
-        "Выберите количетсво вопросов", 
+        "Choose amount of questions",
         reply_markup=standard_number_questions()
     )
 
@@ -209,7 +201,7 @@ def next_word(message):
         if not is_int(message.text):
             bot.send_message(
                 chat_id, 
-                "Выберите количетсво вопросов",
+                "Choose amount of questions",
                 reply_markup=standard_number_questions()
             )
             return
@@ -217,7 +209,7 @@ def next_word(message):
         if number_questions > max_questions:
             bot.send_message(
                 chat_id, 
-                "Выберите количетсво вопросов" + f" не превышающие { max_questions }",
+                "Choose amount of questions" + f" not bigger than{ max_questions }",
                 reply_markup=standard_number_questions()
             )
             return
@@ -226,7 +218,8 @@ def next_word(message):
             "current_question": 0,
             "total_question": number_questions,
             "right_answers": 0,
-            "questions": get_questions(number_questions)
+            "questions": get_questions(number_questions),
+
         }
         send_question(chat_id)
         return
@@ -235,12 +228,17 @@ def next_word(message):
 
     right_answer = words[words_list.index(cache[chat_id]["questions"][cache[chat_id]["current_question"]])]["meaning"]
     if answer == right_answer:
+        bot.send_message(chat_id, emoji.emojize("Correct :white_check_mark:", use_aliases=True))
         cache[chat_id]["right_answers"] += 1
+    else:
+        bot.send_message(chat_id, emoji.emojize("Incorrect :x: \n", use_aliases=True) +
+                         "Right answer is " + right_answer)
 
     if cache[chat_id]["current_question"] == cache[chat_id]["total_question"] - 1:
         bot.send_message(
             chat_id,
-            f"Вы дошли до конца теста! У вас { cache[chat_id]['right_answers'] } из { cache[chat_id]['total_question'] }",
+            f"You have finished the test! You have { cache[chat_id]['right_answers'] }"
+            f" out of { cache[chat_id]['total_question'] } questions",
             reply_markup=emptyKeyboard()
         )
         return
@@ -255,7 +253,7 @@ def books(call):
     for book in bookslist:
         btn_book = types.InlineKeyboardButton(text=book["text"], callback_data=book["text"])
         markup.add(btn_book)
-    bot.send_message(chat_id, emoji.emojize("Книги для подготовки к SAT :exclamation:", use_aliases=True), reply_markup=markup)
+    bot.send_message(chat_id, emoji.emojize("SAT Books :exclamation:", use_aliases=True), reply_markup=markup)
 
 
 @bot.callback_query_handler(func=lambda call: call.data in booktextlist.keys())
@@ -277,7 +275,7 @@ def officials(call):
     for offical in officialslist:
         btn_book = types.InlineKeyboardButton(text=offical["text"], callback_data=offical["text"])
         markup.add(btn_book)
-    bot.send_message(chat_id, "Прошедшие SAT", reply_markup=markup)
+    bot.send_message(chat_id, "Past SAT tests", reply_markup=markup)
 
 
 @bot.callback_query_handler(func=lambda call: call.data in officialstextlist.keys())
@@ -289,7 +287,7 @@ def send_books(call):
 @bot.message_handler(commands=["everyday"])
 def new_word(message):
     chat_id = message.json["chat"]["id"]
-    bot.send_message(chat_id, "Choose Hour", reply_markup=createKeyboardWithMenu(row_width=4, args=times))
+    bot.send_message(chat_id, "Choose Hour", reply_markup=createKeyboardWithMenu(row_width=4,args=times, onetime=True))
 
 
 @bot.message_handler(func= lambda message: message.text in times)
@@ -303,7 +301,8 @@ def set_time(message):
         sec = int(time[0]) * 3600 + int(time[1]) * 60
         smth = {
             "sender_id": chat_id,
-            "time": sec
+            "time": sec,
+            "hours": text
         }
         try:
             queue.put_nowait(smth)
@@ -327,7 +326,8 @@ def opt_time(message):
     sec = int(time[0]) * 3600 + int(time[1]) * 60
     smth = {
         "sender_id": chat_id,
-        "time": sec
+        "time": sec,
+        "hours": text
     }
     try:
         queue.put_nowait(smth)
