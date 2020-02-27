@@ -50,3 +50,12 @@ def get_time(t=None):
     return time.strftime("%d-%m-%Y: %Hh %Mm %Ss", struct_time)
 
 
+def pop_keys_from_dict(d: dict, keys):
+    if isinstance(keys, tuple) or isinstance(keys, list):
+        for k in keys:
+            if k != "dictionary":
+                d.pop(k)
+    else:
+        d.pop(keys)
+    return d
+

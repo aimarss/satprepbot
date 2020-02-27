@@ -9,7 +9,7 @@ from functions import *
 
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
-credentials = open_json("safety/credentials.json")
+credentials = open_json("../safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
@@ -92,7 +92,7 @@ def about(message):
 def back_to_menu(message):
     chat_id = message.json["chat"]["id"]
     if user_in_cache(message):
-        cache.pop(chat_id)
+        cache[chat_id] = pop_keys_from_dict(cache[chat_id], list(cache[chat_id].keys()))
     menu(chat_id)
 
 
@@ -101,6 +101,9 @@ def send_welcome(message):
     chat_id = message.json["chat"]["id"]
     if user_in_cache(message):
         cache.pop(chat_id)
+    cache[chat_id] = {
+        "dictionary": []
+    }
     bot.send_message(chat_id, "Hi! This is a bot that helps you in preparation for the SAT")
     menu(chat_id)
 
@@ -141,6 +144,8 @@ def calling(message):
         new_word(message)
     elif message_type == "posts":
         posts(message)
+    elif message_type == "dictionary":
+        show_dictionary(message)
 
 
 def get_answer_keyboard(question, n=4, width=2):
@@ -180,16 +185,16 @@ def send_question(chat_id):
 @bot.message_handler(func=lambda message: message.text == "words")
 def words_(message):
     chat_id = message.json["chat"]["id"]
-    if chat_id in cache.keys():
+    if "questions" in cache[chat_id]:
         send_question(chat_id)
         return
-    cache[chat_id] = {
+    cache[chat_id].update({
         "state": states["words"],
         "current_question": -1,
         "total_question": 0,
         "right_answers": 0,
         "questions": []
-    }
+    })
     bot.send_message(
         chat_id, 
         "Choose amount of questions",
@@ -216,14 +221,13 @@ def next_word(message):
                 reply_markup=standard_number_questions()
             )
             return
-        cache[chat_id] = {
+        cache[chat_id].update({
             "state": states["words"],
             "current_question": 0,
             "total_question": number_questions,
             "right_answers": 0,
-            "questions": get_questions(number_questions),
-
-        }
+            "questions": get_questions(number_questions)
+        })
         send_question(chat_id)
         return
     
@@ -234,19 +238,31 @@ def next_word(message):
         bot.send_message(chat_id, emoji.emojize("Correct :white_check_mark:", use_aliases=True))
         cache[chat_id]["right_answers"] += 1
     else:
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Do you want to add this word to your dictionary?", callback_data="dictionary_append: " + 
+            cache[chat_id]["questions"][cache[chat_id]["current_question"]]))
         bot.send_message(chat_id, emoji.emojize("Incorrect :x: \n", use_aliases=True) +
-                         "Right answer is " + right_answer)
+                         "Right answer is " + right_answer, reply_markup=markup)
 
     if cache[chat_id]["current_question"] == cache[chat_id]["total_question"] - 1:
         bot.send_message(
             chat_id,
             f"You have finished the test! You have { cache[chat_id]['right_answers'] }"
             f" out of { cache[chat_id]['total_question'] } questions",
-            reply_markup=emptyKeyboard()
+            reply_markup=createKeyboardWithMenu(1, [])
         )
         return
     cache[chat_id]["current_question"] += 1
     send_question(chat_id)
+
+
+@bot.callback_query_handler(func=lambda call: "dictionary_append:" in call.data)
+def dictionary_append(call):
+    chat_id = call.message.json["chat"]["id"]
+    word = " ".join(call.data.split(" ")[1:])
+    cache[chat_id]["dictionary"].append(word)
+    bot.send_message(chat_id, "Word succesfully added!")
+
 
 
 @bot.callback_query_handler(func=lambda call: call.data == "books")
@@ -315,9 +331,9 @@ def set_time(message):
 
 def other(message):
     chat_id = message.json["chat"]["id"]
-    cache[chat_id] = {
+    cache[chat_id].update({
         "state": states["everyday"]
-    }
+    })
     bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
 
 
@@ -354,6 +370,16 @@ def posts(message):
 def send_books(call):
     chat_id = call.message.json["chat"]["id"]
     bot.send_document(chat_id, posts_list[poststextlist[call.data]]["text"])
+
+
+@bot.message_handler(func=lambda message: message.text == "dictionary")
+def show_dictionary(message):
+    chat_id = message.json["chat"]["id"]
+    d = cache[chat_id]["dictionary"]
+    if len(d) == 0:
+        bot.send_message(chat_id, "You don't have words in your dictionary")
+    else:
+        bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
 
 
 if __name__ == "__main__":
