@@ -339,7 +339,7 @@ def opt_time(message):
     cache.pop(chat_id)
 
 
-#gAy
+#gAy and push
 @bot.message_handler(func=lambda message: message.text == "posts")
 def posts(message):
     chat_id = message.json["chat"]["id"]
