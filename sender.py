@@ -20,7 +20,7 @@ sent = [
 
 
 words = open_json("words.json")
-credentials = open_json("../safety/credentials.json")
+credentials = open_json("safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 
 number_senderP = 4

@@ -9,7 +9,7 @@ from functions import *
 
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
-credentials = open_json("../safety/credentials.json")
+credentials = open_json("safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 bot = telebot.TeleBot(TOKEN)
 
@@ -239,7 +239,7 @@ def next_word(message):
         cache[chat_id]["right_answers"] += 1
     else:
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("Do you want to add this word to your dictionary?", callback_data="dictionary_append: " + 
+        markup.add(types.InlineKeyboardButton("Add to the dictionary", callback_data="dictionary_append: " +
             cache[chat_id]["questions"][cache[chat_id]["current_question"]]))
         bot.send_message(chat_id, emoji.emojize("Incorrect :x: \n", use_aliases=True) +
                          "Right answer is " + right_answer, reply_markup=markup)
@@ -261,8 +261,7 @@ def dictionary_append(call):
     chat_id = call.message.json["chat"]["id"]
     word = " ".join(call.data.split(" ")[1:])
     cache[chat_id]["dictionary"].append(word)
-    bot.send_message(chat_id, "Word succesfully added!")
-
+    bot.answer_callback_query(call.id,  word + "successfully added", show_alert=True)
 
 
 @bot.callback_query_handler(func=lambda call: call.data == "books")
@@ -355,7 +354,6 @@ def opt_time(message):
     cache.pop(chat_id)
 
 
-#gAy and push
 @bot.message_handler(func=lambda message: message.text == "posts")
 def posts(message):
     chat_id = message.json["chat"]["id"]
@@ -377,7 +375,7 @@ def show_dictionary(message):
     chat_id = message.json["chat"]["id"]
     d = cache[chat_id]["dictionary"]
     if len(d) == 0:
-        bot.send_message(chat_id, "You don't have words in your dictionary")
+        bot.send_message(chat_id, "There is no words in your dictionary")
     else:
         bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
 
