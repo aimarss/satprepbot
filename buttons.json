@@ -1,10 +1,6 @@
 {
-  "SAT Books :books:": "books",
-  "Past SAT Tests": "officials",
-  "Practice tests": "tests",
-  "SAT Words Tests": "words",
-  "Everyday words": "everyday",
-  "What is the SAT?": "what",
-  "About bot": "about",
-  "Show the dictionary": "dictionary"
+  "SAT Books :books:": "books",        "Past SAT Tests": "officials",
+  "Practice tests": "tests",           "SAT Words Tests": "words",
+  "Everyday words": "everyday",        "What is the SAT?": "what",
+  "Show the dictionary": "dictionary", "About bot": "about"
 }

@@ -65,16 +65,18 @@ def standard_number_questions():
     return createKeyboardWithMenu(4, ["10", "30", "50", "70"])
 
 
+@bot.message_handler(commands=["menu"])
 def menu(chat_id):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btns = list(
-        map(
-            lambda x: types.KeyboardButton(
-                text=emoji.emojize(x),),
-            funcs.keys()
+    markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+    markup.add(
+        *list(
+            map(
+                lambda x: types.KeyboardButton(
+                    text=emoji.emojize(x),),
+                funcs.keys()
+            )
         )
     )
-    list(map(lambda x: markup.add(x), btns))
     bot.send_message(chat_id, "Menu", reply_markup=markup)
 
 
@@ -261,10 +263,9 @@ def dictionary_append(call):
     chat_id = call.message.json["chat"]["id"]
     word = " ".join(call.data.split(" ")[1:])
     cache[chat_id]["dictionary"].append(word)
-    bot.answer_callback_query(call.id,  word + "successfully added", show_alert=True)
+    bot.answer_callback_query(call.id,  word + " successfully added", show_alert=True)
 
 
-@bot.callback_query_handler(func=lambda call: call.data == "books")
 def books(call):
     chat_id = call.json["chat"]["id"]
     markup = types.InlineKeyboardMarkup()
