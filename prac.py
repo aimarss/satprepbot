@@ -3,6 +3,9 @@ from telebot import types
 import json
 from multiprocessing import Process, Queue
 import random
+import flask
+import os
+import _thread
 import emoji
 from sender import start_sender
 from functions import *
@@ -51,13 +54,23 @@ with open("about.txt", "r", encoding="utf-8") as k:
     abouttext = k.read()
 
 
+def checking_id(chat_id):
+    if chat_id not in cache:
+        cache[chat_id] = {
+            "dictionary": []
+        }
+
+
 def user_in_cache(message):
     return message.json["chat"]["id"] in cache.keys()
 
 
 def cached_state(message, state):
     if user_in_cache(message):
-        return cache[message.json["chat"]["id"]]["state"] == state
+        try:
+            return cache[message.json["chat"]["id"]]["state"] == state
+        except KeyError:
+            pass
     return False
 
 
@@ -126,6 +139,7 @@ def menu_calling(call):
 
 @bot.message_handler(func=lambda message: emoji.demojize(message.text, use_aliases=True) in funcs.keys())
 def calling(message):
+    checking_id(message.json["chat"]["id"])
     print(message.text)
     message_type = funcs[emoji.demojize(message.text, use_aliases=True)]
     if message_type == "books":
@@ -381,9 +395,24 @@ def show_dictionary(message):
         bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
 
 
+def start_server():
+    app = flask.Flask(__name__)
+
+    port = int(os.getenv("PORT", ""))
+    if port == "":
+        raise ValueError
+
+    @app.route("/")
+    def index():
+        return flask.jsonify(cache)
+
+    app.run(host="0.0.0.0", port=port)
+
+
 if __name__ == "__main__":
     p = Process(target=start_sender, args=(queue,))
     p.start()
 
+    _thread.start_new_thread(start_server, ())
     bot.polling()
     p.join()

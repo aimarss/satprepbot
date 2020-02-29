@@ -27,11 +27,13 @@ number_senderP = 4
 
 bot = telebot.TeleBot(TOKEN)
 
+local_tz = date.timezone(date.timedelta(hours=6))
+
 
 def get_current_seconds():
-    now = date.datetime.now()
-    today = date.datetime(now.year, now.month, now.day)
-    return now.timestamp() - today.timestamp()
+    now = date.datetime.now().astimezone(tz=local_tz)
+    today = date.datetime(now.year, now.month, now.day, tzinfo=local_tz)
+    return now.timestamp() - today.timestamp(), now.day
 
 
 def get_new_message():
@@ -74,7 +76,12 @@ def start_sender(input):
             senders = list(sorted(senders, key=lambda x: x["time"]))
         except Exception:
             pass
-        current = get_current_seconds()
+        current, day = get_current_seconds()
+        try:
+            if day != past_day:
+                sent = []
+        except:
+            sent = []
         for s in senders:
             sender_id = s["sender"]
             time_ = s["time"]
@@ -85,6 +92,7 @@ def start_sender(input):
             print(f"start Sending to { sender_id }")
             output.put_nowait(sender_id)
             sent.append(sender_id)
+        past_day = day
 
     for p in senders_processes:
         p.join()
