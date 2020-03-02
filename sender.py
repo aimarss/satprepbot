@@ -19,7 +19,7 @@ sent = [
 ]
 
 
-words = open_json("words.json")
+words = open_json("data/words.json")
 credentials = open_json("safety/credentials.json")
 TOKEN = credentials["main"]["token"]
 

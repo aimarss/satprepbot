@@ -3,7 +3,7 @@ from telebot import types
 import time
 
 
-def open_json(s):
+def open_json(s) -> dict:
     with open(s) as f:
         return json.load(f)
 
@@ -53,7 +53,7 @@ def get_time(t=None):
 def pop_keys_from_dict(d: dict, keys):
     if isinstance(keys, tuple) or isinstance(keys, list):
         for k in keys:
-            if k != "dictionary":
+            if k != "dictionary" and k != "state":
                 d.pop(k)
     else:
         d.pop(keys)

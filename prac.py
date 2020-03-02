@@ -24,33 +24,33 @@ states = {
     "everyday": "asking time"
 }
 
-words = open_json("words.json")
+words = open_json("data/words.json")
 
 meanings = list(map(lambda x: x["meaning"], words))
 words_list = list(map(lambda x: x["word"], words))
 
-posts_list = open_json("posts.json")
+posts_list = open_json("data/posts.json")
 poststextlist = {v: k for k, v in enumerate(posts_list)}
 
 
-bookslist = open_json("books.json")
+bookslist = open_json("data/books.json")
 
 booktextlist = {}
 for i, book in enumerate(bookslist):
     booktextlist[book["text"]] = i
 
-officialslist = open_json("officals.json")
+officialslist = open_json("data/officals.json")
 officialstextlist = {}
 
 for i, official in enumerate(officialslist):
     officialstextlist[official["text"]] = i
 
-funcs = open_json("buttons.json")
+funcs = open_json("data/buttons.json")
 
-with open("sat.txt", "r", encoding="utf-8") as f:
+with open("data/sat.txt", "r", encoding="utf-8") as f:
     sattext = f.read()
 
-with open("about.txt", "r", encoding="utf-8") as k:
+with open("data/about.txt", "r", encoding="utf-8") as k:
     abouttext = k.read()
 
 
