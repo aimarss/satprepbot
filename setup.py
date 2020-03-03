@@ -6,5 +6,6 @@ setup(
    description='TELESAT',
    author='Aimar Menoyakov',
    author_email='menoyakov.ai@gmail.com',
-   install_requires=["pyTelegramBotAPI", "emoji"], #external packages as dependencies
+   # external packages as dependencies
+   install_requires=["pyTelegramBotAPI", "emoji"]
 )

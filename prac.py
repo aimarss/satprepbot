@@ -33,7 +33,7 @@ posts_list = open_json("data/posts.json")
 poststextlist = {v: k for k, v in enumerate(posts_list)}
 
 
-bookslist = open_json("data/books.json")
+bookslist = list(open_json("data/books.json"))
 
 booktextlist = {}
 for i, book in enumerate(bookslist):

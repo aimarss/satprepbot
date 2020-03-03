@@ -6,6 +6,8 @@ fp = "data/cache.db"
 
 # Декоратор который при вызове функции обновляет self.conn и self.cursor
 # self.conn и self.cursor имеет свойство перестовать БЫТЬ и их нужно обновлять
+
+
 def update_conn(s):
     def f(fun):
         @functools.wraps(fun)
@@ -18,10 +20,12 @@ def update_conn(s):
         return wrapped
     return f
 
+
 funcs_needed_to_be_update = [
     "ready_tables",
     "exe" 
 ]
+
 
 class DB:
     def __init__(self, fp: str, tables: dict):
@@ -31,7 +35,7 @@ class DB:
         method_list = [func for func in dir(DB)]
         for i, method in enumerate(method_list):
             if callable(getattr(DB, method)) and not method.startswith("__")\
-                and method in funcs_needed_to_be_update:
+                    and method in funcs_needed_to_be_update:
                 setattr(self, method, update_conn(self)(getattr(self, method)))
         # ---------------------------------------------------------------------------
         self.ready_tables()

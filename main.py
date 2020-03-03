@@ -25,6 +25,8 @@ com = Commands(bot, queue, db)
 
 # cleaning cache
 cache_threshold = 30 * minute
+
+
 def clean_cache():
     for chat_id in com.cache:
         if time.time() - com.cache[chat_id]["last_update"] >= cache_threshold:
@@ -55,6 +57,7 @@ words_list = list(map(lambda x: x["word"], words))
 
 states = open_json("data/states.json")
 # -----
+
 
 @bot.message_handler(func=lambda x: True)
 def main(message):
@@ -139,7 +142,6 @@ def callback(call):
         word = " ".join(call.data.split(" ")[1:])
         db.add_word_to_dictionary(chat_id, word)
         bot.answer_callback_query(call.id,  word + " successfully added", show_alert=True)
-
 
 
 if __name__ == "__main__":

@@ -93,7 +93,7 @@ class Commands:
     
     def words(self, chat_id):
         if "questions" in self.cache[chat_id]:
-            send_question(chat_id)
+            self.send_question(chat_id)
             return
         self.cache[chat_id].update({
             "state": states["words"],
@@ -107,10 +107,10 @@ class Commands:
             "Choose amount of questions",
             reply_markup=self.standard_number_questions()
         )
-    
+
     def standard_number_questions(self):
         return createKeyboardWithMenu(4, ["10", "30", "50", "70"])
-    
+
     def get_answer_keyboard(self, question, n=4, width=2):
         answers = []
         right_answer = words_json[words_list.index(question)]["meaning"]
@@ -125,7 +125,6 @@ class Commands:
             random_answers.append(answers.pop(random.randint(0, len(answers) - 1)))
         return createKeyboardWithMenu(width, random_answers)
 
-
     def get_questions(self, n):
         questions = []
         for i in range(n):
@@ -134,7 +133,6 @@ class Commands:
                 new_q = random.choice(words_json)
             questions.append(new_q["word"])
         return questions
-
 
     def send_question(self, chat_id):
         current_question = self.cache[chat_id]['current_question']
@@ -238,4 +236,3 @@ class Commands:
             self.bot.send_message(chat_id, "There is no words in your dictionary")
         else:
             self.bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
-        
