@@ -7,5 +7,5 @@ setup(
    author='Aimar Menoyakov',
    author_email='menoyakov.ai@gmail.com',
    # external packages as dependencies
-   install_requires=["pyTelegramBotAPI", "emoji"]
+   install_requires=["pyTelegramBotAPI", "emoji", "flask"]
 )
