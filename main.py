@@ -63,8 +63,9 @@ states = open_json("data/states.json")
 def main(message):
     chat_id = message.chat.id
     text = emoji.demojize(message.text, use_aliases=True)
+    state = com.cache[chat_id]["state"] = "othertz"
     try:
-        message_type = funcs[emoji.demojize(text, use_aliases=True)]
+        message_type = funcs[text]
     except:
         message_type = None
     # В случае если он только присоединился
@@ -95,27 +96,56 @@ def main(message):
         return
 
     # Функции выбранные из меню
-    if text in funcs.keys() and com.cache[chat_id]["state"] == states["nothing"]:
+    if text in funcs.keys() and state == states["nothing"]:
         # Part of everyday
-        if message_type == "everyday":
-            com.cache[chat_id]["state"] = states["everyday"]
-            bot.send_message(chat_id, "Choose Hour", reply_markup=createKeyboardWithMenu(row_width=4,args=times, onetime=True))
+        if message_type == "settz":
+            com.cache[chat_id]["state"] = states["settz"]
+            bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(1, ["AST (UTC+6)",
+                                                                                                 "EST (UTC-5)",
+                                                                                                 "Other"],
+                                                                                             onetime=True))
             return
         # ---------------
         com.exe(funcs[text], chat_id)
         return
 
     # Если state равен words
-    if com.cache[chat_id]["state"] == states["words"]:
+    if state == states["words"]:
         com.exe("next_word", message)
         return
     # ------------------------
-    
-    # EVERYDAY ---------------
-    if com.cache[chat_id]["state"] == states["everyday"]:
-        com.exe("everyday", message)
+    # сам ебись со states
+    elif state == states["settz"]:
+        com.exe("timezone", message)
         return
-    # ------------------------
+
+    elif state == states["othertz"]:
+        tz = text.split("UTC")[-1]
+        try:
+            tz = int(tz)
+        except:
+            bot.send_message(chat_id, "Enter in correct format please")
+        com.cache[chat_id]["timezone"] = tz
+        com.cache[chat_id]["state"] = "settime"
+        bot.send_message(chat_id, "Choose Hour",
+                         reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
+
+    elif state == states["settime"]:
+        com.exe("everyday", message)
+
+    elif state == states["othertime"]:
+        time = text.split(":")
+        sec = int(time[0]) * 3600 + int(time[1]) * 60
+        smth = {
+            "sender_id": chat_id,
+            "time": sec,
+            "hours": text
+        }
+        try:
+            queue.put_nowait(smth)
+        except Exception as e:
+            print(e)
+        com.cache[chat_id]["state"] = states["nothing"]
 
 
 @bot.callback_query_handler(func=lambda x: True)

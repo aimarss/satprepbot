@@ -29,6 +29,8 @@ with open("data/sat.txt", "r", encoding="utf-8") as f:
 with open("data/about.txt", "r", encoding="utf-8") as k:
     abouttext = k.read()
 # ------
+times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
+
 
 
 class Commands:
@@ -89,7 +91,7 @@ class Commands:
         self.bot.send_message(chat_id, "Past SAT tests", reply_markup=markup)
     
     def tests(self, chat_id):
-        self.bot.send_message(chat_id, "Currently, this function is under development. Please be paitent")
+        self.bot.send_message(chat_id, "Coming soon!")
     
     def words(self, chat_id):
         if "questions" in self.cache[chat_id]:
@@ -202,26 +204,48 @@ class Commands:
         self.send_question(chat_id)
     
     def everyday(self, message):
-        chat_id = message.chat.id
+        chat_id = message.json["chat"]["id"]
+        timezone = self.cache[chat_id]["timezone"]
         text = message.text
         if text == "Other":
-            self.other(message)
+            self.othertime(message)
         else:
             time = text.split(":")
             sec = int(time[0]) * 3600 + int(time[1]) * 60
             smth = {
                 "sender_id": chat_id,
                 "time": sec,
-                "hours": text
+                "hours": text,
+                "timezone": timezone
             }
             try:
                 self.queue.put_nowait(smth)
             except Exception as e:
                 print(e)
             self.cache[chat_id]["state"] = states["nothing"]
-    
-    def other(self, message):
+
+    def timezone(self, message):
         chat_id = message.json["chat"]["id"]
+        text = message.text
+        if text == "Other":
+            self.othertz(message)
+        else:
+            time = "".join(text.split("UTC")).split(")")
+            timezone = time[-1]
+            print(timezone)
+            self.cache[chat_id]["timezone"] = timezone
+            self.bot.send_message(chat_id, "Choose Hour",
+                                  reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
+            self.cache[chat_id]["state"] = "settime"
+
+    def othertz(self, message):
+        chat_id = message.json["chat"]["id"]
+        self.cache[chat_id]["state"] = "othertz"
+        self.bot.send_message(chat_id, "Enter timezone (e.g. UTC+10)")
+
+    def othertime(self, message):
+        chat_id = message.json["chat"]["id"]
+        self.cache[chat_id]["state"] = "othertime"
         self.bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
     
     def what(self, chat_id):
