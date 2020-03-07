@@ -63,7 +63,7 @@ states = open_json("data/states.json")
 def main(message):
     chat_id = message.chat.id
     text = emoji.demojize(message.text, use_aliases=True)
-    state = com.cache[chat_id]["state"] = "othertz"
+    state = com.cache[chat_id]["state"]
     try:
         message_type = funcs[text]
     except:
@@ -114,7 +114,6 @@ def main(message):
         com.exe("next_word", message)
         return
     # ------------------------
-    # сам ебись со states
     elif state == states["settz"]:
         com.exe("timezone", message)
         return
@@ -126,26 +125,30 @@ def main(message):
         except:
             bot.send_message(chat_id, "Enter in correct format please")
         com.cache[chat_id]["timezone"] = tz
-        com.cache[chat_id]["state"] = "settime"
+        com.cache[chat_id]["state"] = states["settime"]
         bot.send_message(chat_id, "Choose Hour",
                          reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
+        return
 
     elif state == states["settime"]:
         com.exe("everyday", message)
+        return
 
     elif state == states["othertime"]:
-        time = text.split(":")
-        sec = int(time[0]) * 3600 + int(time[1]) * 60
+        user_time = text.split(":")
+        sec = int(user_time[0]) * 3600 + int(user_time[1]) * 60
         smth = {
             "sender_id": chat_id,
             "time": sec,
-            "hours": text
+            "hours": text,
+            "timezone": com.cache["timezone"]
         }
         try:
             queue.put_nowait(smth)
         except Exception as e:
             print(e)
         com.cache[chat_id]["state"] = states["nothing"]
+        return
 
 
 @bot.callback_query_handler(func=lambda x: True)

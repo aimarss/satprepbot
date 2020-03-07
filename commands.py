@@ -32,7 +32,6 @@ with open("data/about.txt", "r", encoding="utf-8") as k:
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
 
-
 class Commands:
     def __init__(self, bot, q, db):
         self.bot = bot
@@ -210,8 +209,8 @@ class Commands:
         if text == "Other":
             self.othertime(message)
         else:
-            time = text.split(":")
-            sec = int(time[0]) * 3600 + int(time[1]) * 60
+            user_time = text.split(":")
+            sec = int(user_time[0]) * 3600 + int(user_time[1]) * 60
             smth = {
                 "sender_id": chat_id,
                 "time": sec,
@@ -236,16 +235,16 @@ class Commands:
             self.cache[chat_id]["timezone"] = timezone
             self.bot.send_message(chat_id, "Choose Hour",
                                   reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
-            self.cache[chat_id]["state"] = "settime"
+            self.cache[chat_id]["state"] = states["settime"]
 
     def othertz(self, message):
         chat_id = message.json["chat"]["id"]
-        self.cache[chat_id]["state"] = "othertz"
+        self.cache[chat_id]["state"] = states["othertz"]
         self.bot.send_message(chat_id, "Enter timezone (e.g. UTC+10)")
 
     def othertime(self, message):
         chat_id = message.json["chat"]["id"]
-        self.cache[chat_id]["state"] = "othertime"
+        self.cache[chat_id]["state"] = states["othertime"]
         self.bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
     
     def what(self, chat_id):
