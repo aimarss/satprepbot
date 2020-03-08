@@ -217,6 +217,7 @@ class Commands:
                 "hours": text,
                 "timezone": timezone
             }
+            print(smth)
             try:
                 self.queue.put_nowait(smth)
             except Exception as e:
@@ -229,8 +230,8 @@ class Commands:
         if text == "Other":
             self.othertz(message)
         else:
-            time = "".join(text.split("UTC")).split(")")
-            timezone = time[-1]
+            time = text.split("UTC")[-1].replace(")", "")
+            timezone = int(time)
             print(timezone)
             self.cache[chat_id]["timezone"] = timezone
             self.bot.send_message(chat_id, "Choose Hour",
@@ -244,8 +245,8 @@ class Commands:
 
     def othertime(self, message):
         chat_id = message.json["chat"]["id"]
-        self.cache[chat_id]["state"] = states["othertime"]
         self.bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
+        self.cache[chat_id]["state"] = states["othertime"]
     
     def what(self, chat_id):
         self.bot.send_message(chat_id, text=sattext)

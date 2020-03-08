@@ -2,5 +2,8 @@
     "nothing": "At start",
     "words": "Words Test is going",
     "everyday": "Registering for everyday words",
-    "settz": "Setting timezone"
+    "settz": "Setting timezone",
+    "othertz": "Inserted timezone",
+    "settime": "Setting time",
+    "othertime": "Inseted time"
 }

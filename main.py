@@ -63,7 +63,11 @@ states = open_json("data/states.json")
 def main(message):
     chat_id = message.chat.id
     text = emoji.demojize(message.text, use_aliases=True)
-    state = com.cache[chat_id]["state"]
+    try:
+        state = com.cache[chat_id]["state"]
+        print(state)
+    except KeyError:
+        state = states["nothing"]
     try:
         message_type = funcs[text]
     except:
@@ -135,18 +139,8 @@ def main(message):
         return
 
     elif state == states["othertime"]:
-        user_time = text.split(":")
-        sec = int(user_time[0]) * 3600 + int(user_time[1]) * 60
-        smth = {
-            "sender_id": chat_id,
-            "time": sec,
-            "hours": text,
-            "timezone": com.cache["timezone"]
-        }
-        try:
-            queue.put_nowait(smth)
-        except Exception as e:
-            print(e)
+        print("got here")
+        com.exe("everyday", message)
         com.cache[chat_id]["state"] = states["nothing"]
         return
 

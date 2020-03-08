@@ -73,7 +73,7 @@ def start_sender(input):
                 }
             )
             senders = list(sorted(senders, key=lambda x: x["time"]))
-            local_tz = date.timezone(date.timedelta(hours=int(data["timezone"])))
+            local_tz = date.timezone(date.timedelta(hours=data["timezone"]))
         except Exception:
             pass
         current, day = get_current_seconds(local_tz)
