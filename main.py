@@ -23,6 +23,9 @@ queue = Queue(maxsize=100)
 db = AdapterDB()
 com = Commands(bot, queue, db)
 
+with open("safety/password") as f:
+    adminpassword = f.read()
+
 # cleaning cache
 cache_threshold = 30 * minute
 
@@ -69,6 +72,10 @@ def main(message):
     except KeyError:
         state = states["nothing"]
     try:
+        com.cache[chat_id]["time_seen"] = message.date
+    except KeyError:
+        pass
+    try:
         message_type = funcs[text]
     except:
         message_type = None
@@ -76,7 +83,8 @@ def main(message):
     if chat_id not in com.cache:
         com.cache[chat_id] = {
             "state": states["nothing"],
-            "last_update": time.time()
+            "last_update": time.time(),
+            "admin": False
         }
     # Если в первый раз видим его
     if db.get_user_id(chat_id) is None:
@@ -141,6 +149,21 @@ def main(message):
     elif state == states["othertime"]:
         print("got here")
         com.exe("everyday", message)
+        com.cache[chat_id]["state"] = states["nothing"]
+        return
+
+    elif state == states["admin"]:
+        adminacts = {"Statistics": "stats", "New Post": "newpost", "Edit About": "editabout"}
+        if text == adminpassword:
+            com.cache[chat_id]["admin"] = True
+            bot.send_message(chat_id, "Welcome to Admin Panel!", reply_markup=createKeyboardWithMenu(2, list(adminacts.keys())
+                                                                                                     , onetime=True))
+        elif text in adminacts.keys():
+            com.exe(adminacts[text], chat_id)
+        return
+    elif state == states["editabout"]:
+        with open("data/about.txt", "w") as f:
+            f.write(message.text)
         com.cache[chat_id]["state"] = states["nothing"]
         return
 

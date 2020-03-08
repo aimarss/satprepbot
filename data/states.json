@@ -5,5 +5,8 @@
     "settz": "Setting timezone",
     "othertz": "Inserted timezone",
     "settime": "Setting time",
-    "othertime": "Inseted time"
+    "othertime": "Inseted time",
+    "admin": "Admin panel",
+    "newpost": "Inserting new post",
+    "editabout": "Editing about"
 }

@@ -26,9 +26,14 @@ states = open_json("data/states.json")
 with open("data/sat.txt", "r", encoding="utf-8") as f:
     sattext = f.read()
 
-with open("data/about.txt", "r", encoding="utf-8") as k:
-    abouttext = k.read()
+
+def getabout():
+    with open("data/about.txt", "r", encoding="utf-8") as k:
+        abouttext = k.read()
+        return abouttext
 # ------
+
+
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
 
@@ -252,7 +257,7 @@ class Commands:
         self.bot.send_message(chat_id, text=sattext)
     
     def about(self, chat_id):
-        self.bot.send_message(chat_id, text=abouttext)
+        self.bot.send_message(chat_id, text=getabout())
 
     def dictionary(self, chat_id):
         d = self.db.get_dictionary(chat_id)
@@ -260,3 +265,25 @@ class Commands:
             self.bot.send_message(chat_id, "There is no words in your dictionary")
         else:
             self.bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
+
+    def admin(self, chat_id):
+        if not self.cache[chat_id]["admin"]:
+            self.bot.send_message(chat_id, "Enter password")
+        self.cache[chat_id]["state"] = states["admin"]
+
+    def stats(self, chat_id):
+        cur = time.time()
+        self.bot.send_message(chat_id, "Number of users: " + str(len(self.cache.keys())))
+        n = 0
+        for c in self.cache.keys():
+            if (cur - self.cache[c]["time_seen"]) < (24 * 3600):
+                n += 1
+        self.bot.send_message(chat_id, "Number of users in last 24 hours: " + str(n))
+
+    def newpost(self, chat_id):
+        self.bot.send_message(chat_id, "Enter post here")
+        self.cache[chat_id]["state"] = states["newpost"]
+
+    def editabout(self, chat_id):
+        self.bot.send_message(chat_id, "Enter new text")
+        self.cache[chat_id]["state"] = states["editabout"]
