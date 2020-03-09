@@ -23,11 +23,11 @@ commands = [
 ]
 
 text = {
-    "greetings": "Добрый день! Чтобы оставить отзыв, напишите его в одном сообщении",
-    "are_you_sure": "Вы точно хотите оставить этот отзыв?",
-    "yes/no": "Выберите Да/Нет",
-    "thanks": "Спасибо за оставленный отзыв!",
-    "condition": "Напишите отзыв в одном сообщении"
+    "greetings": "Hello! To leave review please write it in one message",
+    "are_you_sure": "You want to leave this review?",
+    "yes/no": "Choose Yes/Np",
+    "thanks": "Thank you for review!",
+    "condition": "Write review in one message"
 }
 
 
@@ -98,3 +98,6 @@ def all_messages(message):
                     reply_markup=emptyKeyboard()
                 )
                 return
+
+
+bot.polling()
