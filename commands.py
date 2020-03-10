@@ -215,12 +215,11 @@ class Commands:
             self.othertime(message)
         else:
             user_time = text.split(":")
-            sec = int(user_time[0]) * 3600 + int(user_time[1]) * 60
+            sec = (int(user_time[0]) + timezone) % 24 * 3600 + int(user_time[1]) * 60
             smth = {
                 "sender_id": chat_id,
                 "time": sec,
-                "hours": text,
-                "timezone": timezone
+                "hours": text
             }
             print(smth)
             try:

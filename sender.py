@@ -22,13 +22,13 @@ sent = [
 words = open_json("data/words.json")
 credentials = open_json("safety/credentials.json")
 TOKEN = credentials["main"]["token"]
-
+local_tz = date.timezone(date.timedelta(hours=0))
 number_senderP = 4
 
 bot = telebot.TeleBot(TOKEN)
 
 
-def get_current_seconds(local_tz):
+def get_current_seconds():
     now = date.datetime.now().astimezone(tz=local_tz)
     today = date.datetime(now.year, now.month, now.day, tzinfo=local_tz)
     return now.timestamp() - today.timestamp(), now.day
@@ -64,19 +64,18 @@ def start_sender(input):
         try:
             data = input.get_nowait()
             print(get_time() + f" new data recieved { data }")
-            bot.send_message(data["sender_id"], "Everyday words at " + data["hours"] + "in UTC" + data["timezone"])
+            bot.send_message(data["sender_id"], "Everyday words at " + data["hours"])
             senders.append(
                 {
                     "sender": data["sender_id"],
-                    "time": data["time"],
-                    "timezone": data["timezone"]
+                    "time": data["time"]
                 }
             )
             senders = list(sorted(senders, key=lambda x: x["time"]))
-            local_tz = date.timezone(date.timedelta(hours=data["timezone"]))
+
         except Exception:
             pass
-        current, day = get_current_seconds(local_tz)
+        current, day = get_current_seconds()
         try:
             if day != past_day:
                 sent = []
