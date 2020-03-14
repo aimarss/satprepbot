@@ -160,13 +160,7 @@ def main(message):
         return
 
     elif state == states["admin"]:
-        adminacts = {"Statistics": "stats", "New Post": "newpost", "Send post": "sendpost", "Edit About": "editabout"}
-        if text == adminpassword:
-            com.cache[chat_id]["admin"] = True
-            bot.send_message(chat_id, "Welcome to Admin Panel!", reply_markup=createKeyboardWithMenu(2, list(adminacts.keys())
-                                                                                                     , onetime=True))
-        elif text in adminacts.keys():
-            com.exe(adminacts[text], chat_id)
+        com.adminmenu(chat_id, text, adminpassword)
         return
     elif state == states["editabout"]:
         with open("data/about.txt", "w") as f:

@@ -275,6 +275,15 @@ class Commands:
             self.bot.send_message(chat_id, "Enter password")
         self.cache[chat_id]["state"] = states["admin"]
 
+    def adminmenu(self, chat_id, text, adminpassword):
+        adminacts = {"Statistics": "stats", "New Post": "newpost", "Send post": "sendpost", "Edit About": "editabout"}
+        if text == adminpassword:
+            self.cache[chat_id]["admin"] = True
+            self.bot.send_message(chat_id, "Welcome to Admin Panel!",
+                                  reply_markup=createKeyboardWithMenu(2, list(adminacts.keys()), onetime=True))
+        elif text in adminacts.keys():
+            self.exe(adminacts[text], chat_id)
+
     def stats(self, chat_id):
         cur = time.time()
         self.bot.send_message(chat_id, "Number of users: " + str(len(self.cache.keys())))
