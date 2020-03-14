@@ -242,8 +242,15 @@ class Commands:
                                   reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
             self.cache[chat_id]["state"] = states["settime"]
 
-    def othertz(self, message):
-        chat_id = message.json["chat"]["id"]
+    def settz(self, chat_id):
+        self.cache[chat_id]["state"] = states["settz"]
+        self.bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(1, ["AST (UTC+6)",
+                                                                                                  "EST (UTC-5)",
+                                                                                                  "Other"],
+                                                                                              onetime=True))
+        return
+
+    def othertz(self, chat_id):
         self.cache[chat_id]["state"] = states["othertz"]
         self.bot.send_message(chat_id, "Enter timezone (e.g. UTC+10)")
 

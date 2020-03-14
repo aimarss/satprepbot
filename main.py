@@ -109,16 +109,7 @@ def main(message):
 
     # Функции выбранные из меню
     if text in funcs.keys() and state == states["nothing"]:
-        # Part of everyday
-        if message_type == "settz":
-            com.cache[chat_id]["state"] = states["settz"]
-            bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(1, ["AST (UTC+6)",
-                                                                                                 "EST (UTC-5)",
-                                                                                                 "Other"],
-                                                                                             onetime=True))
-            return
-        # ---------------
-        com.exe(funcs[text], chat_id)
+        com.exe(message_type, chat_id)
         return
 
     # Если state равен words
@@ -126,20 +117,8 @@ def main(message):
         com.exe("next_word", message)
         return
     # ------------------------
-    elif state == states["settz"]:
+    elif state == states["settz"] or state == states["othertz"]:
         com.exe("timezone", message)
-        return
-
-    elif state == states["othertz"]:
-        tz = text.split("UTC")[-1]
-        try:
-            tz = int(tz)
-        except:
-            bot.send_message(chat_id, "Enter in correct format please")
-        com.cache[chat_id]["timezone"] = tz
-        com.cache[chat_id]["state"] = states["settime"]
-        bot.send_message(chat_id, "Choose Hour",
-                         reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
         return
 
     elif state == states["settime"]:
@@ -147,9 +126,7 @@ def main(message):
         return
 
     elif state == states["othertime"]:
-        print("got here")
         com.exe("everyday", message)
-        com.cache[chat_id]["state"] = states["nothing"]
         return
 
     elif state == states["admin"]:
