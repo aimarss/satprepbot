@@ -44,8 +44,15 @@ sch.enter(cache_cleaner_delay, 1, clean_cache)
 # JSONs
 funcs = open_json("data/buttons.json")
 
-posts_list = open_json("data/posts.json")
-poststextlist = {v: k for k, v in enumerate(posts_list)}
+
+def posts():
+    posts_list = open_json("data/posts.json")
+    return posts_list
+
+
+def poststext():
+    poststextlist = {v: k for k, v in enumerate(posts())}
+
 
 bookslist = open_json("data/books.json")
 booktextlist = {v: k for k, v in enumerate(map(lambda x: x["text"], bookslist))}
@@ -113,7 +120,7 @@ def main(message):
         if message_type == "settz":
             com.cache[chat_id]["state"] = states["settz"]
             bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(1, ["AST (UTC+6)",
-                                                                                                 "EST (UTC-5)",
+                                                                                                 "EST (UTC-4)",
                                                                                                  "Other"],
                                                                                              onetime=True))
             return
@@ -153,7 +160,7 @@ def main(message):
         return
 
     elif state == states["admin"]:
-        adminacts = {"Statistics": "stats", "New Post": "newpost", "Edit About": "editabout"}
+        adminacts = {"Statistics": "stats", "New Post": "newpost", "Send post": "sendpost", "Edit About": "editabout"}
         if text == adminpassword:
             com.cache[chat_id]["admin"] = True
             bot.send_message(chat_id, "Welcome to Admin Panel!", reply_markup=createKeyboardWithMenu(2, list(adminacts.keys())
@@ -166,6 +173,20 @@ def main(message):
             f.write(message.text)
         com.cache[chat_id]["state"] = states["nothing"]
         return
+    elif state == states["newpost"]:
+        com.cache[chat_id]["newpost"] = text
+        bot.send_message(chat_id, "Are you sure?", reply_markup=createKeyboard(2, ["Yes", "No"], onetime=True))
+        com.cache[chat_id]["state"] = states["addnewpost"]
+        return
+    elif state == states["addnewpost"]:
+        if text == "Yes":
+            addnewpost(com.cache[chat_id]["newpost"])
+            com.cache[chat_id]["state"] = states["admin"]
+            bot.send_message(chat_id, "New post added, go /admin to post it")
+        elif text == "No":
+            com.cache[chat_id]["newpost"] = ""
+            com.cache[chat_id]["state"] = states["admin"]
+            bot.send_message(chat_id, "Can try again /admin")
 
 
 @bot.callback_query_handler(func=lambda x: True)

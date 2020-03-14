@@ -7,8 +7,13 @@ max_questions = 100
 # JSONS
 funcs = open_json("data/buttons.json")
 
-posts_list = open_json("data/posts.json")
-poststextlist = {v: k for k, v in enumerate(posts_list)}
+
+def posts():
+    posts_list = open_json("data/posts.json")
+    return posts_list
+
+
+poststextlist = {v: k for k, v in enumerate(posts())}
 
 bookslist = open_json("data/books.json")
 booktextlist = {v: k for k, v in enumerate(map(lambda x: x["text"], bookslist))}
@@ -286,3 +291,8 @@ class Commands:
     def editabout(self, chat_id):
         self.bot.send_message(chat_id, "Enter new text")
         self.cache[chat_id]["state"] = states["editabout"]
+
+    def sendpost(self, chat_id):
+        self.bot.send_message(chat_id, "Choose post to send", reply_markup=createKeyboard(len(posts().keys()),
+                                                                                          list(posts().values()),
+                                                                                          onetime=True))

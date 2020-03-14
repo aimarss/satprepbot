@@ -59,3 +59,11 @@ def pop_keys_from_dict(d: dict, keys):
         d.pop(keys)
     return d
 
+
+def addnewpost(text):
+    old = open_json("data/posts.json")
+    new = {str(int(list(old.keys())[-1]) + 1): text}
+    old.update(new)
+    with open("data/posts.json", "w") as f:
+        json.dump(old, f, ensure_ascii=False)
+
