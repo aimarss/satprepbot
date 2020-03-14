@@ -23,15 +23,13 @@ queue = Queue(maxsize=100)
 db = AdapterDB()
 com = Commands(bot, queue, db)
 
-with open("safety/password") as f:
-    adminpassword = f.read()
-
 # cleaning cache
 cache_threshold = 30 * minute
 
 
 def clean_cache():
     for chat_id in com.cache:
+
         if time.time() - com.cache[chat_id]["last_update"] >= cache_threshold:
             com.cache.pop(chat_id)
 
@@ -42,8 +40,8 @@ sch.enter(cache_cleaner_delay, 1, clean_cache)
 # --------------
 
 # JSONs
-funcs = open_json("data/buttons.json")
-
+buttons = open_json("data/buttons.json")
+funcs = open_json("data/functions.json")
 
 def posts():
     posts_list = open_json("data/posts.json")
@@ -52,6 +50,7 @@ def posts():
 
 def poststext():
     poststextlist = {v: k for k, v in enumerate(posts())}
+    return poststextlist
 
 
 bookslist = open_json("data/books.json")
@@ -66,6 +65,12 @@ meanings = list(map(lambda x: x["meaning"], words))
 words_list = list(map(lambda x: x["word"], words))
 
 states = open_json("data/states.json")
+reverse_states = {v: k for k, v in states.items()}
+
+with open("safety/password") as f:
+    adminpassword = f.read()
+
+
 # -----
 
 
@@ -83,7 +88,7 @@ def main(message):
     except KeyError:
         pass
     try:
-        message_type = funcs[text]
+        message_type = buttons[text]
     except:
         message_type = None
     # В случае если он только присоединился
@@ -115,17 +120,8 @@ def main(message):
         return
 
     # Функции выбранные из меню
-    if text in funcs.keys() and state == states["nothing"]:
-        # Part of everyday
-        if message_type == "settz":
-            com.cache[chat_id]["state"] = states["settz"]
-            bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(1, ["AST (UTC+6)",
-                                                                                                 "EST (UTC-4)",
-                                                                                                 "Other"],
-                                                                                             onetime=True))
-            return
-        # ---------------
-        com.exe(funcs[text], chat_id)
+    if message_type is not None and state == states["nothing"]:
+        com.exe(message_type, chat_id)
         return
 
     # Если state равен words
@@ -133,61 +129,24 @@ def main(message):
         com.exe("next_word", message)
         return
     # ------------------------
-    elif state == states["settz"]:
-        com.exe("timezone", message)
-        return
 
-    elif state == states["othertz"]:
-        tz = text.split("UTC")[-1]
-        try:
-            tz = int(tz)
-        except:
-            bot.send_message(chat_id, "Enter in correct format please")
-        com.cache[chat_id]["timezone"] = tz
-        com.cache[chat_id]["state"] = states["settime"]
-        bot.send_message(chat_id, "Choose Hour",
-                         reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
+    if state not in reverse_states:
         return
-
-    elif state == states["settime"]:
-        com.exe("everyday", message)
-        return
-
-    elif state == states["othertime"]:
-        print("got here")
-        com.exe("everyday", message)
-        com.cache[chat_id]["state"] = states["nothing"]
-        return
-
-    elif state == states["admin"]:
-        com.adminmenu(chat_id, text, adminpassword)
-        return
-    elif state == states["editabout"]:
-        with open("data/about.txt", "w") as f:
-            f.write(message.text)
-        com.cache[chat_id]["state"] = states["nothing"]
-        return
-    elif state == states["newpost"]:
-        com.cache[chat_id]["newpost"] = text
-        bot.send_message(chat_id, "Are you sure?", reply_markup=createKeyboard(2, ["Yes", "No"], onetime=True))
-        com.cache[chat_id]["state"] = states["addnewpost"]
-        return
-    elif state == states["addnewpost"]:
-        if text == "Yes":
-            addnewpost(com.cache[chat_id]["newpost"])
-            com.cache[chat_id]["state"] = states["admin"]
-            bot.send_message(chat_id, "New post added, go /admin to post it")
-        elif text == "No":
-            com.cache[chat_id]["newpost"] = ""
-            com.cache[chat_id]["state"] = states["admin"]
-            bot.send_message(chat_id, "Can try again /admin")
+    # Использование funcs
+    reverse_state = reverse_states[state]
+    command = None
+    if reverse_state in funcs["time"]:
+        command = funcs["time"][reverse_state]
+    elif reverse_state in funcs["admin"]:
+        command = funcs["admin"][reverse_state]
+    com.exe(command, message)
 
 
 @bot.callback_query_handler(func=lambda x: True)
 def callback(call):
     chat_id = call.message.json["chat"]["id"]
     data = call.data
-    
+
     # Книги
     if data in booktextlist:
         book = bookslist[booktextlist[data]]
@@ -197,16 +156,16 @@ def callback(call):
         except:
             pass
         bot.send_document(chat_id, book["id"])
-    
+
     # Practices
     if data in officialstextlist:
         bot.send_document(chat_id, officialslist[officialstextlist[data]]["id"])
-    
+
     # Adding words to dictionary
     if "dictionary_append:" in data:
         word = " ".join(call.data.split(" ")[1:])
         db.add_word_to_dictionary(chat_id, word)
-        bot.answer_callback_query(call.id,  word + " successfully added", show_alert=True)
+        bot.answer_callback_query(call.id, word + " successfully added", show_alert=True)
 
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@ def update_conn(s):
     return f
 
 
-funcs_needed_to_be_update = [
+buttons_needed_to_be_update = [
     "ready_tables",
     "exe" 
 ]
@@ -31,11 +31,11 @@ class DB:
     def __init__(self, fp: str, tables: dict):
         self.path = fp
         self.tables = tables
-        # Using decorator update_conn to funcs that are in "func_needed_to_be_update"
+        # Using decorator update_conn to buttons that are in "func_needed_to_be_update"
         method_list = [func for func in dir(DB)]
         for i, method in enumerate(method_list):
             if callable(getattr(DB, method)) and not method.startswith("__")\
-                    and method in funcs_needed_to_be_update:
+                    and method in buttons_needed_to_be_update:
                 setattr(self, method, update_conn(self)(getattr(self, method)))
         # ---------------------------------------------------------------------------
         self.ready_tables()
@@ -67,6 +67,10 @@ class AdapterDB:
                     "id": "INTEGER PRIMARY KEY NOT NULL",
                     "user_id": "INTEGER",
                     "word": "STRING"
+                },
+                "time_seen": {
+                    "id": "INTEGER PRIMARY KEY NOT NULL",
+                    "last_time": "LONG"
                 }
             }
         )
@@ -103,4 +107,24 @@ class AdapterDB:
     def get_dictionary(self, telegram_id):
         return self.get_dictionary_by_user_id(
             self.get_user_id(telegram_id)
+        )
+
+    def get_all_users(self):
+        try:
+            return list(map(lambda x: x[0], self.db.exe(
+                "SELECT telegram_id FROM users"
+            ).fetchall()))
+        except TypeError:
+            return None
+
+    def set_time_seen_by_user_id(self, user_id: int, time_seen: int):
+        self.db.exe(
+            "INSERT INTO time_seen(user_id, last_time) VALUES (?, ?)",
+            (user_id, time_seen)
+        )
+
+    def set_time_seen(self, telegram_id, time_seen):
+        self.set_time_seen_by_user_id(
+            self.get_user_id(telegram_id),
+            time_seen
         )

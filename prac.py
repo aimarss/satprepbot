@@ -45,7 +45,7 @@ officialstextlist = {}
 for i, official in enumerate(officialslist):
     officialstextlist[official["text"]] = i
 
-funcs = open_json("data/buttons.json")
+buttons = open_json("data/buttons.json")
 
 with open("data/sat.txt", "r", encoding="utf-8") as f:
     sattext = f.read()
@@ -86,7 +86,7 @@ def menu(chat_id):
             map(
                 lambda x: types.KeyboardButton(
                     text=emoji.emojize(x),),
-                funcs.keys()
+                buttons.keys()
             )
         )
     )
@@ -137,11 +137,11 @@ def menu_calling(call):
     menu(chat_id)
 
 
-@bot.message_handler(func=lambda message: emoji.demojize(message.text, use_aliases=True) in funcs.keys())
+@bot.message_handler(func=lambda message: emoji.demojize(message.text, use_aliases=True) in buttons.keys())
 def calling(message):
     checking_id(message.json["chat"]["id"])
     print(message.text)
-    message_type = funcs[emoji.demojize(message.text, use_aliases=True)]
+    message_type = buttons[emoji.demojize(message.text, use_aliases=True)]
     if message_type == "books":
         books(message)
     elif message_type == "officials":

@@ -5,7 +5,7 @@ import random
 max_questions = 100
 
 # JSONS
-funcs = open_json("data/buttons.json")
+buttons = open_json("data/buttons.json")
 
 
 def posts():
@@ -36,6 +36,10 @@ def getabout():
     with open("data/about.txt", "r", encoding="utf-8") as k:
         abouttext = k.read()
         return abouttext
+
+
+with open("safety/password") as f:
+    adminpassword = f.read()
 # ------
 
 
@@ -62,8 +66,10 @@ class Commands:
     def get_commands(self):
         return self.commands.keys()
     
-    def exe(self, command, chat_id):
-        return self.commands[command](chat_id)
+    def exe(self, command, *args):
+        if command is None:
+            return
+        return self.commands[command](*args)
 
     def start(self, chat_id):
         self.bot.send_message(chat_id, "Hi! This is a bot that helps you in preparation for the SAT")
@@ -79,7 +85,7 @@ class Commands:
                     map(
                         lambda x:
                         emoji.emojize(x),
-                        funcs.keys()
+                        buttons.keys()
                     )
                 )
             )
@@ -192,7 +198,7 @@ class Commands:
             markup.add(types.InlineKeyboardButton("Add to the dictionary", callback_data="dictionary_append: " +
                 self.cache[chat_id]["questions"][self.cache[chat_id]["current_question"]]))
             self.bot.send_message(chat_id, emoji.emojize("Incorrect :x: \n", use_aliases=True) +
-                            "Right answer is " + right_answer, reply_markup=markup)
+                                  "Right answer is " + right_answer, reply_markup=markup)
 
         if self.cache[chat_id]["current_question"] == self.cache[chat_id]["total_question"] - 1:
             self.cache[chat_id]["state"] = states["nothing"]
@@ -282,7 +288,9 @@ class Commands:
             self.bot.send_message(chat_id, "Enter password")
         self.cache[chat_id]["state"] = states["admin"]
 
-    def adminmenu(self, chat_id, text, adminpassword):
+    def adminmenu(self, message):
+        text = message.text
+        chat_id = message.json["chat"]["id"]
         adminacts = {"Statistics": "stats", "New Post": "newpost", "Send post": "sendpost", "Edit About": "editabout"}
         if text == adminpassword:
             self.cache[chat_id]["admin"] = True
@@ -290,6 +298,13 @@ class Commands:
                                   reply_markup=createKeyboardWithMenu(2, list(adminacts.keys()), onetime=True))
         elif text in adminacts.keys():
             self.exe(adminacts[text], chat_id)
+
+    def setabout(self, message):
+        chat_id = message.json["chat"]["id"]
+        with open("data/about.txt", "w") as f:
+            f.write(message.text)
+        self.cache[chat_id]["state"] = states["nothing"]
+        return
 
     def stats(self, chat_id):
         cur = time.time()
@@ -299,6 +314,26 @@ class Commands:
             if (cur - self.cache[c]["time_seen"]) < (24 * 3600):
                 n += 1
         self.bot.send_message(chat_id, "Number of users in last 24 hours: " + str(n))
+
+    def setpost(self, message):
+        text = message.text
+        chat_id = message.json["chat"]["id"]
+        self.cache[chat_id]["newpost"] = text
+        self.bot.send_message(chat_id, "Are you sure?", reply_markup=createKeyboard(2, ["Yes", "No"], onetime=True))
+        self.cache[chat_id]["state"] = states["addnewpost"]
+        return
+
+    def addnewpost(self, message):
+        text = message.text
+        chat_id = message.json["chat"]["id"]
+        if text == "Yes":
+            addnewpost(self.cache[chat_id]["newpost"])
+            self.cache[chat_id]["state"] = states["admin"]
+            self.bot.send_message(chat_id, "New post added, go /admin to post it")
+        elif text == "No":
+            self.cache[chat_id]["newpost"] = ""
+            self.cache[chat_id]["state"] = states["admin"]
+            self.bot.send_message(chat_id, "Can try again /admin")
 
     def newpost(self, chat_id):
         self.bot.send_message(chat_id, "Enter post here")

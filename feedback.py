@@ -51,6 +51,7 @@ def start(message):
 @bot.message_handler(func=lambda x: True)
 def all_messages(message):
     user_id = message.json["chat"]["id"]
+    print(message.json)
     if user_id not in cache.keys():
         bot.send_message(
             user_id, 

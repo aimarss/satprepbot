@@ -1,0 +1,14 @@
+{
+  "time": {
+    "settz": "timezone",
+    "othertz": "timezone",
+    "settime": "everyday",
+    "othertime": "everyday"
+  },
+  "admin": {
+    "admin": "adminmenu",
+    "editabout": "setabout",
+    "newpost": "setpost",
+    "addnewpost": "addnewpost"
+  }
+}
