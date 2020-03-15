@@ -1,56 +1,16 @@
-from functions import *
+from globals import *
 import emoji
 import random
 
 max_questions = 100
 
-# JSONS
-buttons = open_json("data/buttons.json")
-
-
-def posts():
-    posts_list = open_json("data/posts.json")
-    return posts_list
-
-
-poststextlist = {v: k for k, v in enumerate(posts())}
-
-bookslist = open_json("data/books.json")
-booktextlist = {v: k for k, v in enumerate(map(lambda x: x["text"], bookslist))}
-
-officialslist = open_json("data/officals.json")
-officialstextlist = {v: k for k, v in enumerate(map(lambda x: x["text"], officialslist))}
-
-words_json = open_json("data/words.json")
-
-meanings = list(map(lambda x: x["meaning"], words_json))
-words_list = list(map(lambda x: x["word"], words_json))
-
-states = open_json("data/states.json")
-
-with open("data/sat.txt", "r", encoding="utf-8") as f:
-    sattext = f.read()
-
-
-def getabout():
-    with open("data/about.txt", "r", encoding="utf-8") as k:
-        abouttext = k.read()
-        return abouttext
-
-
-with open("safety/password") as f:
-    adminpassword = f.read()
-# ------
-
-
 times = ["6:00", "9:00", "12:00", "15:00", "18:00", "21:00", "0:00", "Other"]
 
 
 class Commands:
-    def __init__(self, bot, q, db):
+    def __init__(self, bot, q):
         self.bot = bot
         self.queue = q
-        self.db = db
 
         self.commands = {
             "start": self.start,
@@ -130,11 +90,11 @@ class Commands:
 
     def get_answer_keyboard(self, question, n=4, width=2):
         answers = []
-        right_answer = words_json[words_list.index(question)]["meaning"]
+        right_answer = words[words_list.index(question)]["meaning"]
         for i in range(n - 1):
             new_a = {"word": ""}
             while new_a["word"] in ["", question]:
-                new_a = random.choice(words_json)
+                new_a = random.choice(words)
             answers.append(new_a["meaning"])
         answers.append(right_answer)
         random_answers = []
@@ -147,7 +107,7 @@ class Commands:
         for i in range(n):
             new_q = {"word": ""}
             while new_q["word"] in [""] + questions:
-                new_q = random.choice(words_json)
+                new_q = random.choice(words)
             questions.append(new_q["word"])
         return questions
 
@@ -189,7 +149,8 @@ class Commands:
         
         answer = message.text
 
-        right_answer = words_json[words_list.index(self.cache[chat_id]["questions"][self.cache[chat_id]["current_question"]])]["meaning"]
+        right_answer = words[words_list.index(self.cache[chat_id]["questions"]
+                                              [self.cache[chat_id]["current_question"]])]["meaning"]
         if answer == right_answer:
             self.bot.send_message(chat_id, emoji.emojize("Correct :white_check_mark:", use_aliases=True))
             self.cache[chat_id]["right_answers"] += 1
@@ -277,7 +238,7 @@ class Commands:
         self.bot.send_message(chat_id, text=getabout())
 
     def dictionary(self, chat_id):
-        d = self.db.get_dictionary(chat_id)
+        d = db.get_dictionary(chat_id)
         if len(d) == 0:
             self.bot.send_message(chat_id, "There is no words in your dictionary")
         else:
@@ -307,12 +268,9 @@ class Commands:
         return
 
     def stats(self, chat_id):
-        cur = time.time()
+        cur = int(time.time())
         self.bot.send_message(chat_id, "Number of users: " + str(len(self.cache.keys())))
-        n = 0
-        for c in self.cache.keys():
-            if (cur - self.cache[c]["time_seen"]) < (24 * 3600):
-                n += 1
+        n = len(db.get_time_seen_from(cur - 24 * 60 * 60))
         self.bot.send_message(chat_id, "Number of users in last 24 hours: " + str(n))
 
     def setpost(self, message):

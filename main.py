@@ -1,10 +1,8 @@
 from sched import scheduler
-import time
 import telebot
 import emoji
-from functions import *
+from globals import *
 from commands import Commands
-from db import AdapterDB
 from multiprocessing import Process, Queue
 from sender import start_sender
 
@@ -20,8 +18,7 @@ bot = telebot.TeleBot(TOKEN)
 # ------------------------
 
 queue = Queue(maxsize=100)
-db = AdapterDB()
-com = Commands(bot, queue, db)
+com = Commands(bot, queue)
 
 # cleaning cache
 cache_threshold = 30 * minute
@@ -39,40 +36,6 @@ sch = scheduler(time.time, time.sleep)
 sch.enter(cache_cleaner_delay, 1, clean_cache)
 # --------------
 
-# JSONs
-buttons = open_json("data/buttons.json")
-funcs = open_json("data/functions.json")
-
-def posts():
-    posts_list = open_json("data/posts.json")
-    return posts_list
-
-
-def poststext():
-    poststextlist = {v: k for k, v in enumerate(posts())}
-    return poststextlist
-
-
-bookslist = open_json("data/books.json")
-booktextlist = {v: k for k, v in enumerate(map(lambda x: x["text"], bookslist))}
-
-officialslist = open_json("data/officals.json")
-officialstextlist = {v: k for k, v in enumerate(map(lambda x: x["text"], officialslist))}
-
-words = open_json("data/words.json")
-
-meanings = list(map(lambda x: x["meaning"], words))
-words_list = list(map(lambda x: x["word"], words))
-
-states = open_json("data/states.json")
-reverse_states = {v: k for k, v in states.items()}
-
-with open("safety/password") as f:
-    adminpassword = f.read()
-
-
-# -----
-
 
 @bot.message_handler(func=lambda x: True)
 def main(message):
@@ -83,10 +46,6 @@ def main(message):
         print(state)
     except KeyError:
         state = states["nothing"]
-    try:
-        com.cache[chat_id]["time_seen"] = message.date
-    except KeyError:
-        pass
     try:
         message_type = buttons[text]
     except:
@@ -104,7 +63,9 @@ def main(message):
         com.exe("start", chat_id)
         return
     # Сохраняем последний дествие для cache_cleaner-а
-    com.cache[chat_id]["last_update"] = time.time()
+    time_seen = int(time.time())
+    com.cache[chat_id]["last_update"] = time_seen
+    db.set_time_seen(chat_id, time_seen)
 
     # Возвращение в меню с любой точки
     if text == "Back to menu":
