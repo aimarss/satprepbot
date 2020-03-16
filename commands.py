@@ -1,4 +1,5 @@
 from functions import *
+from main import get_all_users
 import emoji
 import random
 
@@ -331,9 +332,30 @@ class Commands:
         self.bot.send_message(chat_id, "Number of users in last 24 hours: " + str(n))
 
     # -------------(sub) Creating new post--------------------
+    def newtitle(self, chat_id):
+        self.bot.send_message(chat_id, "Enter new post's title")
+        self.cache[chat_id]["state"] = states["newtitle"]
+
+    def addtitle(self, message):
+        text = message.text
+        chat_id = message.json["chat"]["id"]
+        self.cache[chat_id]["newtitle"] = text
+        self.bot.send_message(chat_id, "Are you sure?", reply_markup=createKeyboard(2, ["Yes", "No"], onetime=True))
+        self.cache[chat_id]["state"] = states["addnewtitle"]
+        return
+
+    def addnewtitle(self, message):
+        text = message.text
+        chat_id = message.json["chat"]["id"]
+        if text == "Yes":
+            self.newpost(chat_id)
+        elif text == "No":
+            self.cache[chat_id]["newtitle"] = ""
+            self.cache[chat_id]["state"] = states["admin"]
+            self.bot.send_message(chat_id, "Can try again /admin")
 
     def newpost(self, chat_id):
-        self.bot.send_message(chat_id, "Enter post here")
+        self.bot.send_message(chat_id, "Enter post's text here")
         self.cache[chat_id]["state"] = states["newpost"]
 
     def setpost(self, message):
@@ -348,7 +370,7 @@ class Commands:
         text = message.text
         chat_id = message.json["chat"]["id"]
         if text == "Yes":
-            addnewpost(self.cache[chat_id]["newpost"])
+            addnewpost(self.cache[chat_id]["newtitle"],self.cache[chat_id]["newpost"])
             self.cache[chat_id]["state"] = states["admin"]
             self.bot.send_message(chat_id, "New post added, go /admin to post it")
         elif text == "No":
@@ -359,6 +381,32 @@ class Commands:
     # -------------(sub) Publicating  post---------------------
 
     def sendpost(self, chat_id):
-        self.bot.send_message(chat_id, "Choose post to send", reply_markup=createKeyboard(len(posts().keys()),
-                                                                                          list(posts().values()),
+        titles = posts().keys()
+        self.bot.send_message(chat_id, "Choose post to send", reply_markup=createKeyboard((len(titles))//2,
+                                                                                          list(titles),
                                                                                           onetime=True))
+        self.cache[chat_id]["state"] = states["sendpost"]
+
+    def checkingtext(self, message):
+        titles = posts().keys()
+        text = message.text
+        chat_id = message.json["chat"]["id"]
+        if text in titles:
+            self.cache[chat_id]["sendingtitle"] = text
+            self.bot.send_message(chat_id, posts()[text])
+            self.bot.send_message(chat_id, "Do you want to send this post to all users?",
+                                  reply_markup=createKeyboard(2, ["Yes", "No"], onetime=True))
+            self.cache[chat_id]["state"] = states["saskingaboutbot"]
+
+    def sending(self, message):
+        text = message.text
+        chat_id = message.json["chat"]["id"]
+        if text == "Yes":
+            post = posts()[self.cache[chat_id]["sendingtitle"]]
+            for id in get_all_users():
+                self.bot.send_message(id, post)
+
+        elif text == "No":
+            self.cache[chat_id]["sendingtitle"] = ""
+            self.cache[chat_id]["state"] = states["admin"]
+            self.bot.send_message(chat_id, "Can try again /admin")

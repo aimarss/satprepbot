@@ -43,6 +43,7 @@ sch.enter(cache_cleaner_delay, 1, clean_cache)
 buttons = open_json("data/buttons.json")
 funcs = open_json("data/functions.json")
 
+
 def posts():
     posts_list = open_json("data/posts.json")
     return posts_list
@@ -70,6 +71,9 @@ reverse_states = {v: k for k, v in states.items()}
 with open("safety/password") as f:
     adminpassword = f.read()
 
+
+def get_all_users():
+    db.get_all_users()
 
 # -----
 
