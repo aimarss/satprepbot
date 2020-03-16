@@ -107,7 +107,22 @@ class Commands:
     
     def tests(self, chat_id):
         self.bot.send_message(chat_id, "Coming soon!")
-    
+
+    def what(self, chat_id):
+        self.bot.send_message(chat_id, text=sattext)
+
+    def about(self, chat_id):
+        self.bot.send_message(chat_id, text=getabout())
+
+    def dictionary(self, chat_id):
+        d = self.db.get_dictionary(chat_id)
+        if len(d) == 0:
+            self.bot.send_message(chat_id, "There is no words in your dictionary")
+        else:
+            self.bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
+
+    # ---------Start of words test-------------------------------------------------------------------------------------
+
     def words(self, chat_id):
         if "questions" in self.cache[chat_id]:
             self.send_question(chat_id)
@@ -217,7 +232,37 @@ class Commands:
             return
         self.cache[chat_id]["current_question"] += 1
         self.send_question(chat_id)
-    
+
+    # -------------------------------Start of everyday words-----------------------------------------------------------
+
+    #                       --------------(sub) Choosing timezone---------------
+
+    def timezone(self, message):
+        chat_id = message.json["chat"]["id"]
+        text = message.text
+        if text == "Other":
+            self.othertz(message)
+        else:
+            time = text.split("UTC")[-1].replace(")", "")
+            timezone = int(time)
+            print(timezone)
+            self.cache[chat_id]["timezone"] = timezone
+            self.bot.send_message(chat_id, "Choose Hour",
+                                  reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
+            self.cache[chat_id]["state"] = states["settime"]
+
+    def settz(self, chat_id):
+        self.cache[chat_id]["state"] = states["settz"]
+        tzlist = ["AST (UTC+6)", "EST (UTC-4)", "MSK (UTC+3)" "Other"]
+        self.bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(2, tzlist, onetime=True))
+        return
+
+    def othertz(self, chat_id):
+        self.cache[chat_id]["state"] = states["othertz"]
+        self.bot.send_message(chat_id, "Enter timezone (e.g. UTC+10)")
+
+    #                   --------------(sub) Choosing time -------------------
+
     def everyday(self, message):
         chat_id = message.json["chat"]["id"]
         timezone = self.cache[chat_id]["timezone"]
@@ -239,49 +284,12 @@ class Commands:
                 print(e)
             self.cache[chat_id]["state"] = states["nothing"]
 
-    def timezone(self, message):
-        chat_id = message.json["chat"]["id"]
-        text = message.text
-        if text == "Other":
-            self.othertz(message)
-        else:
-            time = text.split("UTC")[-1].replace(")", "")
-            timezone = int(time)
-            print(timezone)
-            self.cache[chat_id]["timezone"] = timezone
-            self.bot.send_message(chat_id, "Choose Hour",
-                                  reply_markup=createKeyboardWithMenu(row_width=4, args=times, onetime=True))
-            self.cache[chat_id]["state"] = states["settime"]
-
-    def settz(self, chat_id):
-        self.cache[chat_id]["state"] = states["settz"]
-        self.bot.send_message(chat_id, "Choose Timezone", reply_markup=createKeyboardWithMenu(1, ["AST (UTC+6)",
-                                                                                                  "EST (UTC-5)",
-                                                                                                  "Other"],
-                                                                                              onetime=True))
-        return
-
-    def othertz(self, chat_id):
-        self.cache[chat_id]["state"] = states["othertz"]
-        self.bot.send_message(chat_id, "Enter timezone (e.g. UTC+10)")
-
     def othertime(self, message):
         chat_id = message.json["chat"]["id"]
         self.bot.send_message(chat_id, "Enter time in 24 hour format (e.g. 13:15)")
         self.cache[chat_id]["state"] = states["othertime"]
-    
-    def what(self, chat_id):
-        self.bot.send_message(chat_id, text=sattext)
-    
-    def about(self, chat_id):
-        self.bot.send_message(chat_id, text=getabout())
 
-    def dictionary(self, chat_id):
-        d = self.db.get_dictionary(chat_id)
-        if len(d) == 0:
-            self.bot.send_message(chat_id, "There is no words in your dictionary")
-        else:
-            self.bot.send_message(chat_id, "Dictionary:\n    " + "\n    ".join(d))
+    # ---------------Start of admin panel-------------------------------------------
 
     def admin(self, chat_id):
         if not self.cache[chat_id]["admin"]:
@@ -299,12 +307,19 @@ class Commands:
         elif text in adminacts.keys():
             self.exe(adminacts[text], chat_id)
 
+    # ------------------------(sub)Editing about -----------------------------
+    def editabout(self, chat_id):
+        self.bot.send_message(chat_id, "Enter new text")
+        self.cache[chat_id]["state"] = states["editabout"]
+
     def setabout(self, message):
         chat_id = message.json["chat"]["id"]
         with open("data/about.txt", "w") as f:
             f.write(message.text)
         self.cache[chat_id]["state"] = states["nothing"]
         return
+
+    # -------------------(sub) Users Stats -----------------
 
     def stats(self, chat_id):
         cur = time.time()
@@ -314,6 +329,12 @@ class Commands:
             if (cur - self.cache[c]["time_seen"]) < (24 * 3600):
                 n += 1
         self.bot.send_message(chat_id, "Number of users in last 24 hours: " + str(n))
+
+    # -------------(sub) Creating new post--------------------
+
+    def newpost(self, chat_id):
+        self.bot.send_message(chat_id, "Enter post here")
+        self.cache[chat_id]["state"] = states["newpost"]
 
     def setpost(self, message):
         text = message.text
@@ -335,13 +356,7 @@ class Commands:
             self.cache[chat_id]["state"] = states["admin"]
             self.bot.send_message(chat_id, "Can try again /admin")
 
-    def newpost(self, chat_id):
-        self.bot.send_message(chat_id, "Enter post here")
-        self.cache[chat_id]["state"] = states["newpost"]
-
-    def editabout(self, chat_id):
-        self.bot.send_message(chat_id, "Enter new text")
-        self.cache[chat_id]["state"] = states["editabout"]
+    # -------------(sub) Publicating  post---------------------
 
     def sendpost(self, chat_id):
         self.bot.send_message(chat_id, "Choose post to send", reply_markup=createKeyboard(len(posts().keys()),
