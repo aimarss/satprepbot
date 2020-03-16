@@ -1,5 +1,4 @@
 from functions import *
-from main import get_all_users
 import emoji
 import random
 
@@ -300,7 +299,7 @@ class Commands:
     def adminmenu(self, message):
         text = message.text
         chat_id = message.json["chat"]["id"]
-        adminacts = {"Statistics": "stats", "New Post": "newpost", "Send post": "sendpost", "Edit About": "editabout"}
+        adminacts = {"Statistics": "stats", "New Post": "newtitle", "Send post": "sendpost", "Edit About": "editabout"}
         if text == adminpassword:
             self.cache[chat_id]["admin"] = True
             self.bot.send_message(chat_id, "Welcome to Admin Panel!",
