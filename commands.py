@@ -343,7 +343,7 @@ class Commands:
         self.bot.send_message(chat_id, "Choose post to send", reply_markup=createKeyboard((len(titles))//2,
                                                                                           list(titles),
                                                                                           onetime=True))
-        self.cache[chat_id]["state"] = states["sendpost"]
+        self.cache[chat_id]["state"] = states["whatpost"]
 
     def checkingtext(self, message):
         titles = posts().keys()
@@ -354,15 +354,18 @@ class Commands:
             self.bot.send_message(chat_id, posts()[text])
             self.bot.send_message(chat_id, "Do you want to send this post to all users?",
                                   reply_markup=createKeyboard(2, ["Yes", "No"], onetime=True))
-            self.cache[chat_id]["state"] = states["saskingaboutbot"]
+            self.cache[chat_id]["state"] = states["askingaboutbot"]
 
     def sending(self, message):
         text = message.text
         chat_id = message.json["chat"]["id"]
         if text == "Yes":
             post = posts()[self.cache[chat_id]["sendingtitle"]]
-            for id in get_all_users():
-                self.bot.send_message(id, post)
+            for id in db.get_all_users():
+                try:
+                    self.bot.send_message(id, post)
+                except:
+                    print(f"can't send post to {id}")
 
         elif text == "No":
             self.cache[chat_id]["sendingtitle"] = ""

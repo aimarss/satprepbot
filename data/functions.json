@@ -11,6 +11,8 @@
     "newtitle": "newtitle",
     "newpost": "setpost",
     "addnewpost": "addnewpost",
-    "sendpost": "sendpost"
+    "sendpost": "sendpost",
+    "whatpost": "checkingtext",
+    "askingaboutbot": "sending"
   }
 }

@@ -11,5 +11,7 @@
     "newtitle": "Inserting new title",
     "editabout": "Editing about",
     "addnewpost": "Adding new post",
-    "sendpost": "Sending post"
+    "sendpost": "Sending post",
+    "whatpost": "Choosing the post",
+    "askingaboutbot": "Asking about bot"
 }
