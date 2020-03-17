@@ -1,8 +1,10 @@
 from sched import scheduler
+import time
 import telebot
 import emoji
 from globals import *
 from commands import Commands
+from db import AdapterDB
 from multiprocessing import Process, Queue
 from sender import start_sender
 

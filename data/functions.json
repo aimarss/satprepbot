@@ -8,7 +8,9 @@
   "admin": {
     "admin": "adminmenu",
     "editabout": "setabout",
+    "newtitle": "newtitle",
     "newpost": "setpost",
-    "addnewpost": "addnewpost"
+    "addnewpost": "addnewpost",
+    "sendpost": "sendpost"
   }
 }

@@ -8,6 +8,8 @@
     "othertime": "Inseted time",
     "admin": "Admin panel",
     "newpost": "Inserting new post",
+    "newtitle": "Inserting new title",
     "editabout": "Editing about",
-    "addnewpost": "Adding new post"
+    "addnewpost": "Adding new post",
+    "sendpost": "Sending post"
 }
